@@ -6,15 +6,17 @@ class LogInViewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.white, appBar: AppBar(
+          backgroundColor: Colors.white,
+          title: Image.asset("assets/appbar-image.png", height: 53,),
+          centerTitle: true,
+        ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(padding: EdgeInsets.all(10),
           child: Column(
            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(child: Image.asset("assets/appbar-image.png", height: 53,)),
-              SizedBox(height: 30,),
               Center(child: Image.asset("assets/loginimage.png", height: 152,)),// image part
               Text("Login", style: TextStyle(color: Color(0xff55AB60), fontSize: 24, fontWeight: FontWeight.w600),),
               SizedBox(height: 20,),
