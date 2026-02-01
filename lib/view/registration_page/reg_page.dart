@@ -9,6 +9,7 @@ class RegViewPage extends StatelessWidget {
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.white,
+          scrolledUnderElevation: 0,
           title: Image.asset("assets/appbar-image.png", height: 53,),
           centerTitle: true,
         ),
@@ -86,7 +87,7 @@ class RegViewPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Center(
-                        child: Text("Login", style: TextStyle(color: Colors.white, ),)
+                        child: Text("Register", style: TextStyle(color: Colors.white, ),)
                     ),
                   ),
                 ),// login Button

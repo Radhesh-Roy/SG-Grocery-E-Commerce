@@ -6,7 +6,9 @@ class LogInViewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, appBar: AppBar(
+      backgroundColor: Colors.white,
+        appBar: AppBar(
+          scrolledUnderElevation: 0,
           backgroundColor: Colors.white,
           title: Image.asset("assets/appbar-image.png", height: 53,),
           centerTitle: true,
