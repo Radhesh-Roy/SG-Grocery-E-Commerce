@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class HomeViewPage extends StatelessWidget {
   const HomeViewPage({super.key});
@@ -26,6 +27,67 @@ class HomeViewPage extends StatelessWidget {
                   )
                 ),
               ),
+            ), // Searchbar
+            SizedBox(height: 20,),
+            CarouselSlider(
+              options: CarouselOptions(height: 154, viewportFraction: 1, ),
+              items: [1,2,3,4,5].map((i) {
+                return Builder(
+                  builder: (BuildContext context) {
+                    return Container(
+                        width: MediaQuery.of(context).size.width,
+                        margin: EdgeInsets.symmetric(horizontal: 5.0),
+                        decoration: BoxDecoration(
+                          image: DecorationImage(image: AssetImage("assets/slider1.png",),fit: BoxFit.cover),
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                    );
+                  },
+                );
+              }).toList(),
+            ), // slider Side
+            SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(
+                    hoverColor: Colors.transparent,
+                    onTap: (){},
+                    child: Text("Top Categories", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700,),)),
+                InkWell(
+                  hoverColor: Colors.transparent,
+                    onTap: (){},
+                    child: Text("Explore All", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
+              ],
+            ), // category top
+            SizedBox(
+              height: 125,
+              child: ListView.builder(
+                itemCount: 4,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+               return Container(
+                   child: Column(
+                     children: [
+                       Container(
+                         height: 87,
+                         width: 87,
+                         decoration: BoxDecoration(
+                           image: DecorationImage(image: AssetImage("assets/catagory1.png"), fit: BoxFit.cover)
+                         ),
+                       ),
+                       Container(
+                         height: 38,
+                         decoration: BoxDecoration(
+                           color: Color(0xff55AB60)
+                         ),
+                         child: Text("Groecries", style: TextStyle(fontSize: 12, color: Colors.white, fontWeight: FontWeight.w600),),
+
+                       )
+                     ],
+                   ),
+               );
+              },),
             )
           ],
         ),),
