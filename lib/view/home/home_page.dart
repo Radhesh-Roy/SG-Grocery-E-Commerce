@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -60,35 +62,123 @@ class HomeViewPage extends StatelessWidget {
                     child: Text("Explore All", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
               ],
             ), // category top
+            SizedBox(height: 10,),
             SizedBox(
-              height: 125,
+              height: 135,
               child: ListView.builder(
-                itemCount: 4,
+                itemCount: 7,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-               return Container(
-                   child: Column(
-                     children: [
-                       Container(
-                         height: 87,
-                         width: 87,
-                         decoration: BoxDecoration(
-                           image: DecorationImage(image: AssetImage("assets/catagory1.png"), fit: BoxFit.cover)
-                         ),
-                       ),
-                       Container(
-                         height: 38,
-                         decoration: BoxDecoration(
-                           color: Color(0xff55AB60)
-                         ),
-                         child: Text("Groecries", style: TextStyle(fontSize: 12, color: Colors.white, fontWeight: FontWeight.w600),),
-
-                       )
-                     ],
+               return InkWell(
+                 hoverColor: Colors.transparent,
+                 onTap: (){
+                   log("category");
+                 },
+                 child: Container(
+                   margin: EdgeInsets.all(5),
+                   decoration: BoxDecoration(
+                     borderRadius: BorderRadius.circular(7),
+                     color: Color(0xffF2FCF4)
                    ),
+                     child: Column(
+                       children: [
+                         Container(
+                           height: 87,
+                           width: 87,
+                           decoration: BoxDecoration(
+                             image: DecorationImage(image: AssetImage("assets/catagory1.png"), fit: BoxFit.cover)
+                           ),
+                         ),
+                         Container(
+                           height: 38,
+                           width: 87,
+                           decoration: BoxDecoration(
+                             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5), bottomRight: Radius.circular(5)),
+                             color: Color(0xff55AB60)
+                           ),
+                           child: Center(child: Text("Groecries", style: TextStyle(fontSize: 12, color: Colors.white, fontWeight: FontWeight.w600),)),
+
+                         )
+                       ],
+                     ),
+                 ),
                );
-              },),
-            )
+
+              },
+              ),
+
+            ),
+            SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(
+                    hoverColor: Colors.transparent,
+                    onTap: (){},
+                    child: Text("Top Products", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700,),)),
+                InkWell(
+                    hoverColor: Colors.transparent,
+                    onTap: (){},
+                    child: Text("Explore All", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
+              ],
+            ),// Top Products
+            SizedBox(height: 10,),
+            SizedBox(
+              height: 200,
+                width: MediaQuery.sizeOf(context).width,
+                child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 8,
+              itemBuilder: (context, index) {
+                return InkWell(
+                  hoverColor: Colors.transparent,
+                  onTap: (){},
+                  child: Container(
+                    margin: EdgeInsets.all(5),
+                  height: 192,
+                    width: 162,
+                    decoration: BoxDecoration(
+                      color: Color(0xffF2FCF4),
+                      borderRadius: BorderRadius.circular(8)
+                    ),
+                    child: Stack(
+                      children: [
+                        Column(
+                          spacing: 7,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Center(child: Image.asset("assets/topProduct1.png", height: 92, width: 86,)),
+                            Text("Fortune Rice", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500,),),
+                            Text("\$3/kg", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),)
+
+                          ],
+                        ),
+                        Positioned(
+                            top: 20,
+                            child: Container(
+                              padding: EdgeInsets.all(1),
+                          height: 42,
+                          width: 58,
+                          decoration: BoxDecoration(
+                            color: Color(0xff55AB60),
+                            borderRadius: BorderRadius.only(topRight: Radius.circular(50), bottomRight: Radius.circular(50))
+                          ),
+                              child: Column(
+                                children: [
+                                  Text("37%", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),),
+                                  Text("OFF", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),),
+                                ],
+                              )
+                        ))
+                      ],
+                    ),
+                  ),
+                );
+            },))
+
+
+
+
           ],
         ),),
       ),
