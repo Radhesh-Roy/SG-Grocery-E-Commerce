@@ -174,7 +174,16 @@ class HomeViewPage extends StatelessWidget {
                     ),
                   ),
                 );
-            },))
+            },)),//
+            SizedBox(height: 15,),
+            Container(
+              height: 191,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(image: AssetImage("assets/advertisement.png"), fit: BoxFit.cover)
+              ),
+            )
 
 
 
