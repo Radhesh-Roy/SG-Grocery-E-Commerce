@@ -104,10 +104,8 @@ class HomeViewPage extends StatelessWidget {
                      ),
                  ),
                );
-
               },
               ),
-
             ),
             SizedBox(height: 20,),
             Row(
@@ -151,7 +149,6 @@ class HomeViewPage extends StatelessWidget {
                             Center(child: Image.asset("assets/topProduct1.png", height: 92, width: 86,)),
                             Text("Fortune Rice", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500,),),
                             Text("\$3/kg", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),)
-
                           ],
                         ),
                         Positioned(
@@ -184,15 +181,114 @@ class HomeViewPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(image: AssetImage("assets/advertisement.png"), fit: BoxFit.cover)
               ),
-            )
+            ),// cashback image
+            SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(
+                    hoverColor: Colors.transparent,
+                    onTap: (){},
+                    child: Text("Deals Of the week", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700,),)),
+                InkWell(
+                    hoverColor: Colors.transparent,
+                    onTap: (){},
+                    child: Text("Explore All", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
+              ],
+            ),// deals of the week
+            SizedBox(height: 10,),
+            SizedBox(
+                height: 200,
+                width: MediaQuery.sizeOf(context).width,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 8,
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      hoverColor: Colors.transparent,
+                      onTap: (){},
+                      child: Container(
+                        margin: EdgeInsets.all(5),
+                        height: 192,
+                        width: 162,
+                        decoration: BoxDecoration(
+                            color: Color(0xffF2FCF4),
+                            borderRadius: BorderRadius.circular(8)
+                        ),
+                        child:
+                            Column(
+                              spacing: 7,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Center(child: Image.asset("assets/softdrink.png", height: 92, width: 86,)),
+                                Text("Soft Drinks", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500,),),
+                                Text("Up to 40% off", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Color(0xff55AB60)),)
+                              ],
+                            ),
+                      ),
+                    );
+                  },)),// deals of the week product
+            SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(
+                    hoverColor: Colors.transparent,
+                    onTap: (){},
+                    child: Text("Featured Items", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700,),)),
+                InkWell(
+                    hoverColor: Colors.transparent,
+                    onTap: (){},
+                    child: Text("Explore All", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
+              ],
+            ),// Featured Item
+            SizedBox(height: 10,),
+            SizedBox(
+                height: 200,
+                width: MediaQuery.sizeOf(context).width,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 8,
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      hoverColor: Colors.transparent,
+                      onTap: (){},
+                      child: Container(
+                        margin: EdgeInsets.all(3),
+                        padding: EdgeInsets.all(4),
+                        height: 192,
+                        width: 162,
+                        decoration: BoxDecoration(
+                            color: Color(0xffF2FCF4),
+                            borderRadius: BorderRadius.circular(8)
+                        ),
+                        child:
+                        Column(
+                          spacing: 7,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Center(child: Image.asset("assets/granola.png", height: 92, width: 86,)),
+                            Text("Granola Premium Almond", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500,),),
+                            Padding(
+                              padding: const EdgeInsets.all(4),
+                              child: Row(
 
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("\$22", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Color(0xff55AB60)),),
+                                  Text("1KG", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700,),)
 
-
-
+                                ]
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    );
+                  },)),// Featured Item product
           ],
         ),),
       ),
-
     );
   }
 }
