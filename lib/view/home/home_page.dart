@@ -19,7 +19,6 @@ class HomeViewPage extends StatelessWidget {
               elevation: 9,
               shadowColor: Colors.white54,
               child: TextField(
-
                 decoration: InputDecoration(
                   prefixIcon: Image.asset("assets/search.png", height: 23, width: 23,),
                   hintText: "Search products and brands",

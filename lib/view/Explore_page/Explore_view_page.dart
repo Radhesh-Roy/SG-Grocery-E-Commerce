@@ -11,6 +11,7 @@ class ExploreViewPage extends StatelessWidget {
         scrolledUnderElevation: 0,
         leading: InkWell(
             hoverColor: Colors.transparent,
+            onTap: (){},
             child: Image(image: AssetImage("assets/back.png",))),
         title: Text("Explore", style: TextStyle( fontWeight: FontWeight.w700, fontSize: 22
         ),),
