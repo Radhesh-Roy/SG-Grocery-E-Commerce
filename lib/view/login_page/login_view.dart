@@ -22,7 +22,7 @@ class LogInViewPage extends StatelessWidget {
               Center(child: Image.asset("assets/loginimage.png", height: 152,)),// image part
               Text("Login", style: TextStyle(color: Color(0xff55AB60), fontSize: 24, fontWeight: FontWeight.w600),),
               SizedBox(height: 20,),
-              Text("Email Id", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
+              Text("Email Id", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18,),),
               SizedBox(height: 20,),
               TextField(
                 decoration: InputDecoration(
