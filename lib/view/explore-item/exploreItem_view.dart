@@ -28,9 +28,9 @@ class ExploreItemViewPage extends StatelessWidget {
             itemCount: 10,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), itemBuilder: (context, index) {
             return Container(
-              margin: EdgeInsets.all(7),
-              padding: EdgeInsets.all(4),
-              height: 236,
+              margin: EdgeInsets.all(5),
+              padding: EdgeInsets.all(12),
+              height: 300,
               decoration: BoxDecoration(
                   color: Color(0xffF2FCF4),
                   borderRadius: BorderRadius.circular(8)
@@ -51,32 +51,71 @@ class ExploreItemViewPage extends StatelessWidget {
                           Row(
                             spacing: 3,
                             children: [
-                              Container(
-                                  padding: EdgeInsets.all(1),
-                                  height: 22,
-                                  width: 22,
-                                  decoration: BoxDecoration(
-                                      border: Border.all(color: Color(0xff55AB60), width: 1),
-                                      borderRadius: BorderRadius.circular(100)
-                                  ),
-                                  child: Center(
-                                    child: Text("-", style: TextStyle(color: Color(0xff55AB60), fontWeight: FontWeight.bold, fontSize: 12),),
-                                  )
+                              InkWell(
+                                onTap: (){},
+                                hoverColor: Colors.transparent,
+                                child: Container(
+                                    padding: EdgeInsets.all(1),
+                                    height: 22,
+                                    width: 22,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(color: Color(0xff55AB60), width: 1),
+                                        borderRadius: BorderRadius.circular(100)
+                                    ),
+                                    child: Center(
+                                      child: Text("-", style: TextStyle(color: Color(0xff55AB60), fontWeight: FontWeight.bold, fontSize: 12),),
+                                    )
+                                ),
                               ),
                               Text("1", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),),
-                              Container(
-                                  padding: EdgeInsets.all(1),
-                                  height: 22,
-                                  width: 22,
-                                  decoration: BoxDecoration(
-                                      color: Color(0xff55AB60),
-                                      borderRadius: BorderRadius.circular(100)
-                                  ),
-                                  child: Center(
-                                    child: Text("+", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),),
-                                  )
+                              InkWell(
+                                onTap: (){},
+                                hoverColor: Colors.transparent,
+                                child: Container(
+                                    padding: EdgeInsets.all(1),
+                                    height: 22,
+                                    width: 22,
+                                    decoration: BoxDecoration(
+                                        color: Color(0xff55AB60),
+                                        borderRadius: BorderRadius.circular(100)
+                                    ),
+                                    child: Center(
+                                      child: Text("+", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),),
+                                    )
+                                ),
                               ),
                             ],
+                          )
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        spacing: 5,
+                        children: [
+
+                          Container(
+                              padding: EdgeInsets.all(5),
+                              height: 30,
+                              decoration: BoxDecoration(
+                                color: Color(0xff55AB60),
+                                borderRadius: BorderRadius.circular(5)
+                              ),
+                              child: Center(
+                                child: Text("Subscribe", style: TextStyle( color: Colors.white, fontSize: 12, fontWeight: FontWeight.w600),),
+                              ),
+                            ),
+
+                          Container(
+                            padding: EdgeInsets.all(5),
+                            height: 28,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Color(0xff55AB60), width: 1),
+                              borderRadius: BorderRadius.circular(5)
+                            ),
+                            child: Center(
+                              child: Text("Buy Once",style: TextStyle( color: Color(0xff55AB60), fontSize: 12, fontWeight: FontWeight.w600),),
+
+                            ),
                           )
                         ],
                       )
@@ -89,18 +128,7 @@ class ExploreItemViewPage extends StatelessWidget {
                         hoverColor: Colors.transparent,
                         onTap: (){
                         },
-                        child: Container(
-                            padding: EdgeInsets.all(1),
-                            height: 24,
-                            width: 24,
-                            decoration: BoxDecoration(
-                                color: Color(0xff55AB60),
-                                borderRadius: BorderRadius.circular(100)
-                            ),
-                            child: Center(
-                              child: Text("+", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),),
-                            )
-                        ),
+                        child: Image.asset("assets/fav.png", height: 24, width: 23,),
                       ))
                 ],
               ),
