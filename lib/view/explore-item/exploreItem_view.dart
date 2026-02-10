@@ -30,32 +30,30 @@ class ExploreItemViewPage extends StatelessWidget {
             return Container(
               margin: EdgeInsets.all(5),
               padding: EdgeInsets.all(12),
-              height: 300,
+              height: 260,
               decoration: BoxDecoration(
                   color: Color(0xffF2FCF4),
                   borderRadius: BorderRadius.circular(8)
               ),
               child: Stack(
-                children: [
+                children:[
                   Column(
                     spacing: 3,
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Center(child: Image.asset("assets/strawberry.png", height: 79, width: 107,)),
-                      Text("Strawberry (1 kg)", style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700, color: Color(0xff656565)),),
+                      Center(child: Image.asset("assets/strawberry.png", height: 60, width: 107,)),
+                      Text("Strawberry (1 kg)", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Color(0xff656565)),),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text("\$3", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600,color: Color(0xff55AB60)),),
                           Row(
-                            spacing: 3,
                             children: [
                               InkWell(
                                 onTap: (){},
                                 hoverColor: Colors.transparent,
                                 child: Container(
-                                    padding: EdgeInsets.all(1),
                                     height: 22,
                                     width: 22,
                                     decoration: BoxDecoration(
