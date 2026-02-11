@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class DetailsView extends StatelessWidget {
   const DetailsView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -321,7 +320,7 @@ class DetailsView extends StatelessWidget {
                                   ),
                                   child: Center(
                                     child: Text(
-                                      "Groecries",
+                                      "Strawberry",
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.white,

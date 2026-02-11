@@ -6,11 +6,12 @@ import 'package:sggrocery/view/explore-item/exploreItem_view.dart';
 import 'package:sggrocery/view/home/home_page.dart';
 import 'package:sggrocery/view/registration_page/reg_page.dart';
 import 'package:sggrocery/view/splash_screen/splash_screen.dart';
+import 'package:sggrocery/view/subscription_page/subscriptiopn_view.dart';
 
 void main() {
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
-    home: DetailsView(),
+    home: SubscriptionViewPage(),
   ));
 }
 
