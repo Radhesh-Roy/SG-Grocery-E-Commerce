@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sggrocery/view/Explore_page/Explore_view_page.dart';
+import 'package:sggrocery/view/cart-page/cart-view.dart';
 import 'package:sggrocery/view/details_page/details_view.dart';
 import 'package:sggrocery/view/explore-item/exploreItem_view.dart';
 import 'package:sggrocery/view/home/home_page.dart';
@@ -11,7 +12,7 @@ import 'package:sggrocery/view/subscription_page/subscriptiopn_view.dart';
 void main() {
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
-    home: SubscriptionViewPage(),
+    home: CartViewPage(),
   ));
 }
 
