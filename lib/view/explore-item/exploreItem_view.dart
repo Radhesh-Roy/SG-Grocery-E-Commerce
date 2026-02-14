@@ -73,6 +73,7 @@ class ExploreItemViewPage extends StatelessWidget {
                                     padding: EdgeInsets.all(1),
                                     height: 22,
                                     width: 22,
+
                                     decoration: BoxDecoration(
                                         color: Color(0xff55AB60),
                                         borderRadius: BorderRadius.circular(100)
