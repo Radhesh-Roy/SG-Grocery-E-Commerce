@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class CartViewPage extends StatelessWidget {
@@ -45,11 +47,11 @@ class CartViewPage extends StatelessWidget {
             SizedBox(height: 15),
             Expanded(
               child: ListView.builder(
-                itemCount: 5,
+                itemCount: 4,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
 
-                  if(index==4){
+                  if(index==3){
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -328,7 +330,6 @@ class CartViewPage extends StatelessWidget {
                             ),
                           ],
                         ),// Coupon Card
-
                         SizedBox(height: 10,),
                         Center(child: Text("Promo code can be applied on payment screen", style: TextStyle(color: Colors.grey, fontSize: 16, fontWeight: FontWeight.w600),)),
                         SizedBox(height: 10,),
@@ -345,7 +346,6 @@ class CartViewPage extends StatelessWidget {
                           elevation: 3,
                           color: Colors.white70,
                           child: Container(
-                            padding: EdgeInsets.all(10),
                             height: 160,
                             decoration: BoxDecoration(
                               color: Colors.white,
@@ -353,60 +353,91 @@ class CartViewPage extends StatelessWidget {
                             ),
                             child: Column(
                               children: [
-                                Container(
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text("Total MRP", style: TextStyle(color: Color(0xff9B9B9B), fontSize: 16, fontWeight: FontWeight.w400),),
-                                          Text("\$9.000", style: TextStyle(color: Color(0xff9B9B9B), fontSize: 16, fontWeight: FontWeight.w400),),
+                                Expanded(
+                                  flex: 3,
+                                  child: Container(
+                                    padding: EdgeInsets.only(right: 10, left: 10, top: 10),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text("Total MRP", style: TextStyle(color: Color(0xff9B9B9B), fontSize: 16, fontWeight: FontWeight.w400),),
+                                            Text("\$9.000", style: TextStyle(color: Color(0xff9B9B9B), fontSize: 16, fontWeight: FontWeight.w400),),
 
 
-                                        ],
-                                      ),
-                                      Divider(),
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text("Discount", style: TextStyle(color: Color(0xff9B9B9B), fontSize: 16, fontWeight: FontWeight.w400),),
-                                          Text("\$0.00", style: TextStyle(color: Color(0xff9B9B9B), fontSize: 16, fontWeight: FontWeight.w400),),
+                                          ],
+                                        ),
+                                        Divider(),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text("Discount", style: TextStyle(color: Color(0xff9B9B9B), fontSize: 16, fontWeight: FontWeight.w400),),
+                                            Text("\$0.00", style: TextStyle(color: Color(0xff9B9B9B), fontSize: 16, fontWeight: FontWeight.w400),),
 
 
-                                        ],
-                                      ),
-                                      Divider(),
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text("Shipping Charges", style: TextStyle(color: Color(0xff9B9B9B), fontSize: 16, fontWeight: FontWeight.w400),),
-                                          Text("Free", style: TextStyle(color: Color(0xff9B9B9B), fontSize: 16, fontWeight: FontWeight.w400),),
+                                          ],
+                                        ),
+                                        Divider(),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text("Shipping Charges", style: TextStyle(color: Color(0xff9B9B9B), fontSize: 16, fontWeight: FontWeight.w400),),
+                                            Text("Free", style: TextStyle(color: Color(0xff9B9B9B), fontSize: 16, fontWeight: FontWeight.w400),),
 
 
-                                        ],
-                                      ),
-                                    ],
-                                  )
-                                ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: Color(0xffDCFFE2),
-
+                                          ],
+                                        ),
+                                      ],
+                                    )
                                   ),
-                                  child:  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text("Total", style: TextStyle(color: Color(0xff434343), fontSize: 18, fontWeight: FontWeight.w400),),
-                                      Text("\$9.00", style: TextStyle(color: Color(0xff434343), fontSize: 18, fontWeight: FontWeight.w400),),
+                                ),
+                                Expanded(
+                                  flex:1,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Color(0xffDCFFE2),
+
+                                    ),
+                                    child:  Padding(
+                                      padding: const EdgeInsets.all(10),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text("Total", style: TextStyle(color: Color(0xff434343), fontSize: 18, fontWeight: FontWeight.w600),),
+                                          Text("\$9.00", style: TextStyle(color: Color(0xff434343), fontSize: 18, fontWeight: FontWeight.w600),),
 
 
-                                    ],
+                                        ],
+                                      ),
+                                    ),
                                   ),
                                 )
                               ],
                             ),
                           ),
-                        ),
+                        ),// payment Details
+                        SizedBox(height: 10,),
+                        Center(
+                          child: InkWell(
+                            hoverColor: Colors.transparent,
+                           onTap:(){
+                              log("checkout");
+                           },
+                            child: Container(
+                              height: 50,
+                              width: 200,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(7),
+                                color: Color(0xff55AB60)
+                              ),
+                              child: Center(
+                                child: Text("Checkout", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600),),
+                              ),
+                            ),
+                          ),
+                        ), // Checkout button
+
                       ],
                     );
                   }
