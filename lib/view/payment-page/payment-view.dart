@@ -102,7 +102,7 @@ class PaymentViewpage extends StatelessWidget {
                       children: [
                         Container(
                           height: 51,
-                          width: 100,
+                          width: 70,
                           decoration: BoxDecoration(
                             color: Color(0xffF5F5F5),
                             borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10))
@@ -140,7 +140,7 @@ class PaymentViewpage extends StatelessWidget {
                                 hoverColor: Colors.transparent,
                                 fillColor: Color(0xffF5F5F5),
                                 filled: true,
-                                hintText: "Phone",
+                                hintText: "Phone Number",
                                 hintStyle: TextStyle(color: Color(0xff9B9B9B), fontSize: 18, fontWeight: FontWeight.w400),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10)),
@@ -150,7 +150,17 @@ class PaymentViewpage extends StatelessWidget {
                           ),
                         )
                       ],
-                    )
+                    ),// Phone number
+                    SizedBox(height: 15,),
+
+                    Text(
+                      "Choose Delivery Address",
+                      style: TextStyle(
+                        color: Color(0xff424242),
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
 
                   ],
                 ),
