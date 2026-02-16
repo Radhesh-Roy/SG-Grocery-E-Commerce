@@ -29,145 +29,195 @@ class PaymentViewpage extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 10),
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            SizedBox(height: 10),
+            Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(15),
+                    topRight: Radius.circular(15),
+                  ),
                 ),
-              ),
-              child: Padding(
-                padding: EdgeInsets.all(12),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Contact Details",
-                      style: TextStyle(
-                        color: Color(0xff424242),
-                        fontSize: 22,
-                        fontWeight: FontWeight.w600,
+                child: Padding(
+                  padding: EdgeInsets.all(12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Contact Details",
+                        style: TextStyle(
+                          color: Color(0xff424242),
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 10,),
-                    TextField(
-                      decoration: InputDecoration(
-                        hoverColor: Colors.transparent,
-                        fillColor: Color(0xffF5F5F5),
-                        filled: true,
-                        hintText: "First name",
-                        hintStyle: TextStyle(color: Color(0xff9B9B9B), fontSize: 18, fontWeight: FontWeight.w400),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide.none
-                        )
-                      ),
-                    ),// First Name
-                    SizedBox(height: 10,),
-                    TextField(
-                      decoration: InputDecoration(
+                      SizedBox(height: 10,),
+                      TextField(
+                        decoration: InputDecoration(
                           hoverColor: Colors.transparent,
                           fillColor: Color(0xffF5F5F5),
                           filled: true,
-                          hintText: "Last name",
+                          hintText: "First name",
                           hintStyle: TextStyle(color: Color(0xff9B9B9B), fontSize: 18, fontWeight: FontWeight.w400),
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: BorderSide.none
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide.none
                           )
-                      ),
-                    ),// Last Name
-                    SizedBox(height: 10,),
-                    TextField(
-                      decoration: InputDecoration(
-                          hoverColor: Colors.transparent,
-                          fillColor: Color(0xffF5F5F5),
-                          filled: true,
-                          hintText: "Email",
-                          hintStyle: TextStyle(color: Color(0xff9B9B9B), fontSize: 18, fontWeight: FontWeight.w400),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: BorderSide.none
-                          )
-                      ),
-                    ),// Email
-                    SizedBox(height: 10,),
-                    Row(
-                      children: [
-                        Container(
-                          height: 51,
-                          width: 70,
-                          decoration: BoxDecoration(
-                            color: Color(0xffF5F5F5),
-                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10))
-                          ),
-                          child: DropdownButton(
-                            alignment: AlignmentGeometry.center,
-                            icon: Image.asset("assets/dropdown.png", height: 25, width: 25,),
-                            isExpanded:true,
-                              underline: SizedBox(),
-                              hint: Image.asset("assets/ban.png", height: 25, width: 25,),
-                              items: [{
-                              "code": "+880", "img":"assets/ban.png"
-                              },
-                              {"code": "+91", "img":"assets/ind.png"},
-                                {"code": "+54", "img":"assets/arg.png"},
-                              ].map((item)=>DropdownMenuItem(
-                              value: item,
-                              child: Row(
-                                children: [
-                                  Image.asset(item['img']!, width: 20),
-                                  SizedBox(width: 6),
-                                  Text(item['code']!),
-                                ],
-                              ))).toList(), onChanged: (value) {
-                          },),
                         ),
-                        Container(
-                          height: 51,
-                          width: 1,
-                          color: Color(0xffD3D3D3),
+                      ),// First Name
+                      SizedBox(height: 10,),
+                      TextField(
+                        decoration: InputDecoration(
+                            hoverColor: Colors.transparent,
+                            fillColor: Color(0xffF5F5F5),
+                            filled: true,
+                            hintText: "Last name",
+                            hintStyle: TextStyle(color: Color(0xff9B9B9B), fontSize: 18, fontWeight: FontWeight.w400),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide.none
+                            )
                         ),
-                        Expanded(
-                          child: TextField(
-                            decoration: InputDecoration(
-                                hoverColor: Colors.transparent,
-                                fillColor: Color(0xffF5F5F5),
-                                filled: true,
-                                hintText: "Phone Number",
-                                hintStyle: TextStyle(color: Color(0xff9B9B9B), fontSize: 18, fontWeight: FontWeight.w400),
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10)),
-                                    borderSide: BorderSide.none
-                                )
+                      ),// Last Name
+                      SizedBox(height: 10,),
+                      TextField(
+                        decoration: InputDecoration(
+                            hoverColor: Colors.transparent,
+                            fillColor: Color(0xffF5F5F5),
+                            filled: true,
+                            hintText: "Email",
+                            hintStyle: TextStyle(color: Color(0xff9B9B9B), fontSize: 18, fontWeight: FontWeight.w400),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide.none
+                            )
+                        ),
+                      ),// Email
+                      SizedBox(height: 10,),
+                      Row(
+                        children: [
+                          Container(
+                            height: 51,
+                            width: 70,
+                            decoration: BoxDecoration(
+                              color: Color(0xffF5F5F5),
+                              borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10))
                             ),
+                            child: DropdownButton(
+                              alignment: AlignmentGeometry.center,
+                              icon: Image.asset("assets/dropdown.png", height: 25, width: 25,),
+                              isExpanded:true,
+                                underline: SizedBox(),
+                                hint: Image.asset("assets/ban.png", height: 25, width: 25,),
+                                items: [{
+                                "code": "+880", "img":"assets/ban.png"
+                                },
+                                {"code": "+91", "img":"assets/ind.png"},
+                                  {"code": "+54", "img":"assets/arg.png"},
+                                ].map((item)=>DropdownMenuItem(
+                                value: item,
+                                child: Row(
+                                  children: [
+                                    Image.asset(item['img']!, width: 20),
+                                    SizedBox(width: 6),
+                                    Text(item['code']!),
+                                  ],
+                                ))).toList(), onChanged: (value) {
+                            },),
                           ),
-                        )
-                      ],
-                    ),// Phone number
-                    SizedBox(height: 15,),
-
-                    Text(
-                      "Choose Delivery Address",
-                      style: TextStyle(
-                        color: Color(0xff424242),
-                        fontSize: 22,
-                        fontWeight: FontWeight.w600,
+                          Container(
+                            height: 51,
+                            width: 1,
+                            color: Color(0xffD3D3D3),
+                          ),
+                          Expanded(
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  hoverColor: Colors.transparent,
+                                  fillColor: Color(0xffF5F5F5),
+                                  filled: true,
+                                  hintText: "Phone Number",
+                                  hintStyle: TextStyle(color: Color(0xff9B9B9B), fontSize: 18, fontWeight: FontWeight.w400),
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10)),
+                                      borderSide: BorderSide.none
+                                  )
+                              ),
+                            ),
+                          )
+                        ],
+                      ),// Phone number
+                      SizedBox(height: 15,),
+                      Text(
+                        "Choose Delivery Address",
+                        style: TextStyle(
+                          color: Color(0xff424242),
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
+                      SizedBox(height: 15,),
+                      Row(
+                        children: [
+                          Radio(value: 1),
+                          Expanded(
+                            child: Card(
+                              elevation: 7,
+                              color: Colors.white,
+                              shadowColor: Colors.white,
+                              child: Container(
+                                padding: EdgeInsets.all(10),
+                                height: 174,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.white
+                                ),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Image.asset("assets/home.png", height: 15, width: 15,),
+                                            SizedBox(width: 10,),
+                                            Text("Home", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),)
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Image.asset("assets/edit.png", height: 15, width: 15,),
+                                            SizedBox(width: 10,),
+                                            Image.asset("assets/delete.png", height: 15, width: 15,),
 
-                  ],
+                                          ],
+                                        ),
+
+                                      ],
+                                    ),
+                                    Text("data")
+                                  ],
+                                ),
+                              ),
+
+                            ),
+                          )
+        
+                        ],
+                      )
+        
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ),
-        ],
+
+          ],
+        ),
       ),
     );
   }
