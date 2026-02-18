@@ -60,7 +60,9 @@ class PaymentViewpage extends StatelessWidget {
                       SizedBox(height: 10,),
 
                       TextField(
+
                         decoration: InputDecoration(
+
                           hoverColor: Colors.transparent,
                           fillColor: Color(0xffF5F5F5),
                           filled: true,
