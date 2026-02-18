@@ -3,10 +3,8 @@ import 'package:flutter/services.dart';
 
 class PaymentViewpage extends StatelessWidget {
   const PaymentViewpage({super.key});
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Color(0xff55AB60),
       appBar: AppBar(
@@ -56,13 +54,9 @@ class PaymentViewpage extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-
                       SizedBox(height: 10,),
-
                       TextField(
-
                         decoration: InputDecoration(
-
                           hoverColor: Colors.transparent,
                           fillColor: Color(0xffF5F5F5),
                           filled: true,
@@ -205,10 +199,8 @@ class PaymentViewpage extends StatelessWidget {
                                                 hoverColor: Colors.transparent,
                                                 onTap: (){},
                                                 child: Image.asset("assets/delete.png", height: 15, width: 15,)),
-
                                           ],
                                         ),
-
                                       ],
                                     ),
                                     Padding(
@@ -221,7 +213,6 @@ class PaymentViewpage extends StatelessWidget {
 
                             ),
                           )
-        
                         ],
                       ),// Home address
                       SizedBox(height: 15,),
@@ -265,11 +256,8 @@ class PaymentViewpage extends StatelessWidget {
                                                 hoverColor: Colors.transparent,
                                                   onTap: (){},
                                                   child: Image.asset("assets/delete.png", height: 15, width: 15,)),
-
                                             ],
                                           ),
-
-
                                       ],
                                     ),
                                     Padding(
@@ -279,10 +267,8 @@ class PaymentViewpage extends StatelessWidget {
                                   ],
                                 ),
                               ),
-
                             ),
                           )
-
                         ],
                       ),// office address
                       SizedBox(height: 15,),
