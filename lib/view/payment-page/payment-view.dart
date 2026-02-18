@@ -182,6 +182,7 @@ class PaymentViewpage extends StatelessWidget {
                                   color: Colors.white
                                 ),
                                 child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -195,16 +196,25 @@ class PaymentViewpage extends StatelessWidget {
                                         ),
                                         Row(
                                           children: [
-                                            Image.asset("assets/edit.png", height: 15, width: 15,),
+                                            InkWell(
+                                                hoverColor:Colors.transparent,
+                                                onTap:(){},
+                                                child: Image.asset("assets/edit.png", height: 15, width: 15,)),
                                             SizedBox(width: 10,),
-                                            Image.asset("assets/delete.png", height: 15, width: 15,),
+                                            InkWell(
+                                                hoverColor: Colors.transparent,
+                                                onTap: (){},
+                                                child: Image.asset("assets/delete.png", height: 15, width: 15,)),
 
                                           ],
                                         ),
 
                                       ],
                                     ),
-                                    Text("data")
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 25),
+                                      child: Text("Home Address"),
+                                    )
                                   ],
                                 ),
                               ),
@@ -213,7 +223,91 @@ class PaymentViewpage extends StatelessWidget {
                           )
         
                         ],
-                      )
+                      ),// Home address
+                      SizedBox(height: 15,),
+                      Row(
+                        children: [
+                          Radio(value: 1),
+                          Expanded(
+                            child: Card(
+                              elevation: 7,
+                              color: Colors.white,
+                              shadowColor: Colors.white,
+                              child: Container(
+                                padding: EdgeInsets.all(10),
+                                height: 174,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.white
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                            children: [
+                                              Image.asset("assets/office.png", height: 15, width: 15,),
+                                              SizedBox(width: 10,),
+                                              Text("Home", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),)
+                                            ],
+                                          ),
+                                        SizedBox(width: 7,),
+                                        Row(
+                                            children: [
+                                              InkWell(
+                                                hoverColor:Colors.transparent,
+                                                  onTap:(){},
+                                                  child: Image.asset("assets/edit.png", height: 15, width: 15,)),
+                                              SizedBox(width: 10,),
+                                              InkWell(
+                                                hoverColor: Colors.transparent,
+                                                  onTap: (){},
+                                                  child: Image.asset("assets/delete.png", height: 15, width: 15,)),
+
+                                            ],
+                                          ),
+
+
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 25),
+                                      child: Text("Home Address"),
+                                    )
+                                  ],
+                                ),
+                              ),
+
+                            ),
+                          )
+
+                        ],
+                      ),// office address
+                      SizedBox(height: 15,),
+                      InkWell(
+                        hoverColor: Colors.transparent,
+                        onTap: (){},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Container(
+                              height: 20,
+                              width: 20,
+                              decoration: BoxDecoration(
+                                border: BoxBorder.all(color: Color(0xff55AB60), width: 2),
+                                borderRadius: BorderRadius.circular(50)
+                              ),
+                              child:
+                                 Icon(Icons.add, size: 16, color: Color(0xff55AB60), fontWeight: FontWeight.w600,),
+
+                            ),
+                            SizedBox(width: 7,),
+                            Text("Add New Address", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),),
+                          ],
+                        ),
+                      )// Add New Address
         
                     ],
                   ),
