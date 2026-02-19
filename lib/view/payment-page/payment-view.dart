@@ -293,8 +293,177 @@ class PaymentViewpage extends StatelessWidget {
                             Text("Add New Address", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),),
                           ],
                         ),
-                      )// Add New Address
-        
+                      ),// Add New Address
+                      SizedBox(height: 15,),
+                      Text(
+                        "Do you have a promo code/coupon?",
+                        style: TextStyle(
+                          color: Color(0xff424242),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(height: 10,),
+                      TextField(
+                        decoration: InputDecoration(
+                            hoverColor: Colors.transparent,
+                            fillColor: Color(0xffF5F5F5),
+                            filled: true,
+                            prefixIcon: Image.asset("assets/coupon.png", height: 22,width: 22,),
+                            hintText: "Enter Your Code",
+                            hintStyle: TextStyle(color: Color(0xff9B9B9B), fontSize: 18, fontWeight: FontWeight.w400),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide.none
+                            )
+                        ),
+                      ),// coupon field
+                      SizedBox(height: 15,),
+                      Center(
+                        child: InkWell(
+                          hoverColor: Colors.transparent,
+                          onTap:(){
+                          },
+                          child: Container(
+                            height: 50,
+                            width: 200,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(7),
+                                color: Color(0xff55AB60)
+                            ),
+                            child: Center(
+                              child: Text("Apply Now", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600),),
+                            ),
+                          ),
+                        ),
+                      ),// apply button
+                      SizedBox(height: 15,),
+                      Text(
+                        "Choose Payment Method",
+                        style: TextStyle(
+                          color: Color(0xff424242),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(height: 15,),
+                      Container(
+                        height: 57,
+                        width: double.infinity,
+                        decoration:BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xffF3FFF5)
+                        ),
+                        child: Row(
+                          children: [
+                            Radio(value: 1),
+                            Text("Cash On Delivery",style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Color(0xff7E7E7E)),)
+                          ],
+                        ),
+                      ),// cash on delivery
+                      SizedBox(height: 15,),
+                      Container(
+                        height: 57,
+                        width: double.infinity,
+                        decoration:BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xffF3FFF5)
+                        ),
+                        child: Row(
+                          children: [
+                            Radio(value: 1),
+                            Text("UPI",style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Color(0xff7E7E7E)),)
+                          ],
+                        ),
+                      ),// UPI
+                      SizedBox(height: 15,),
+                      Container(
+                        height: 57,
+                        width: double.infinity,
+                        decoration:BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xffF3FFF5)
+                        ),
+                        child: Row(
+                          children: [
+                            Radio(value: 1),
+                            Text("Wallet",style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Color(0xff7E7E7E)),)
+                          ],
+                        ),
+                      ),// Wallet
+                      SizedBox(height: 15,),
+                      Container(
+                        height: 57,
+                        width: double.infinity,
+                        decoration:BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xffF3FFF5)
+                        ),
+                        child: Row(
+                          children: [
+                            Radio(value: 1),
+                            Text("Credit/Debit Card",style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Color(0xff7E7E7E)),)
+                          ],
+                        ),
+                      ),// Credit/Debit Card
+                      SizedBox(height: 15,),
+                      InkWell(
+                        hoverColor: Colors.transparent,
+                        onTap: (){},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Container(
+                              height: 18,
+                              width: 18,
+                              decoration: BoxDecoration(
+                                  border: BoxBorder.all(color: Color(0xff55AB60), width: 2),
+                                  borderRadius: BorderRadius.circular(50)
+                              ),
+                              child:
+                              Icon(Icons.add, size: 14, color: Color(0xff55AB60), fontWeight: FontWeight.w600,),
+
+                            ),
+                            SizedBox(width: 7,),
+                            Text("Add New Card", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),),
+                          ],
+                        ),
+                      ),// Add New Card
+                      SizedBox(height: 15,),
+                      Image.asset("assets/card.png", height: 151,),
+                      SizedBox(height: 15,),
+                      Padding(padding: EdgeInsets.all(20),
+                      child: Row(
+                        children: [
+                          Expanded(
+                              flex:3,
+                              child: Container(
+                                height: 51,
+                                decoration: BoxDecoration(
+                                  color: Color(0xff55AB60),
+                                  borderRadius: BorderRadius.only(topLeft: Radius.circular(10,), bottomLeft: Radius.circular(10))
+                                ),
+                                child: Center(child: Text("Enter CVV", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.white),)),
+                              )),
+                          Expanded(
+                              flex:5,
+                              child: Container(
+                                height: 51,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: BoxBorder.all(color: Color(0xff55AB60))
+                                ),
+                                child: TextField(
+
+                                ),
+                              )),
+                        ],
+                      ),)
+
+
+
+
+
                     ],
                   ),
                 ),
