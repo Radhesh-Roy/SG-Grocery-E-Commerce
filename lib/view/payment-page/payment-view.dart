@@ -435,7 +435,9 @@ class PaymentViewpage extends StatelessWidget {
                       Padding(padding: EdgeInsets.all(20),
                       child: Row(
                         children: [
+
                           Expanded(
+
                               flex:3,
                               child: Container(
                                 height: 51,
