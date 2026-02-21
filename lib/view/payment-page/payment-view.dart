@@ -422,7 +422,6 @@ class PaymentViewpage extends StatelessWidget {
                               ),
                               child:
                               Icon(Icons.add, size: 14, color: Color(0xff55AB60), fontWeight: FontWeight.w600,),
-
                             ),
                             SizedBox(width: 7,),
                             Text("Add New Card", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),),
@@ -435,9 +434,7 @@ class PaymentViewpage extends StatelessWidget {
                       Padding(padding: EdgeInsets.all(20),
                       child: Row(
                         children: [
-
                           Expanded(
-
                               flex:3,
                               child: Container(
                                 height: 51,
@@ -456,16 +453,10 @@ class PaymentViewpage extends StatelessWidget {
                                   border: BoxBorder.all(color: Color(0xff55AB60))
                                 ),
                                 child: TextField(
-
                                 ),
                               )),
                         ],
                       ),)
-
-
-
-
-
                     ],
                   ),
                 ),
