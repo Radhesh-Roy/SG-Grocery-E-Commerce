@@ -42,7 +42,9 @@ class LogInViewPage extends StatelessWidget {
                     ),
                     hintText: "Enter Your Password", hintStyle: TextStyle(color: Color(0xff858FAD))
                 ),
+
               ),
+
               SizedBox(height: 20,),
               InkWell(
                 onTap: (){},
