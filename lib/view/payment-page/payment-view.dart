@@ -286,6 +286,7 @@ class PaymentViewpage extends StatelessWidget {
                             backgroundColor: Colors.transparent,
                             builder: (context) {
                               return Container(
+                                padding: EdgeInsets.all(10),
                                 height: MediaQuery.of(context).size.height * 0.85, // top gap থাকবে
                                 width: double.infinity,
                                 decoration: BoxDecoration(
@@ -295,49 +296,166 @@ class PaymentViewpage extends StatelessWidget {
                                     topRight: Radius.circular(20),
                                   ),
                                 ),
-                                child: Padding(
-                                  padding:  EdgeInsets.all(16.0),
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.end,
-                                        crossAxisAlignment: CrossAxisAlignment.end,
-                                        children: [
-                                          Container(
-                                            height: 20,
-                                            width: 20,
-                                            decoration: BoxDecoration(
-                                                border: BoxBorder.all( width: 2),
-                                                borderRadius: BorderRadius.circular(50)
+                                child: SingleChildScrollView(
+                                  child: Padding(
+                                    padding:  EdgeInsets.all(16.0),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.end,
+                                          crossAxisAlignment: CrossAxisAlignment.end,
+                                          children: [
+                                            Container(
+                                              height: 23,
+                                              width: 23,
+                                              decoration: BoxDecoration(
+                                                  border: BoxBorder.all( width: 2),
+                                                  borderRadius: BorderRadius.circular(50)
+                                              ),
+                                              child:
+                                              Center(child: Text("x", style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600,),)),
+                                  
                                             ),
-                                            child:
-                                            Center(child: Text("x", style: TextStyle(fontSize: 11, fontWeight: FontWeight.w600,),)),
-
-                                          ),
-                                        ],
-                                      ),// Cross Button
-                                      SizedBox(height: 15),
-                                      Text(
-                                        "Add New Address",
-                                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                                      ),
-
-                                      SizedBox(height: 20),
-
-                                      TextField(
-                                        decoration: InputDecoration(
-                                          labelText: "Address",
-                                          border: OutlineInputBorder(),
+                                          ],
+                                        ),// Cross Button
+                                        SizedBox(height: 15),
+                                        Text(
+                                          "Add New Address",
+                                          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),
                                         ),
-                                      ),
-
-                                      SizedBox(height: 15),
-
-                                      ElevatedButton(
-                                        onPressed: () {},
-                                        child: Text("Save Address"),
-                                      )
-                                    ],
+                                        SizedBox(height: 10,),
+                                        TextField(
+                                          decoration: InputDecoration(
+                                              hoverColor: Colors.transparent,
+                                              fillColor: Color(0xffF5F5F5),
+                                              filled: true,
+                                              hintText: "Country",
+                                              hintStyle: TextStyle(color: Color(0xff9B9B9B), fontSize: 18, fontWeight: FontWeight.w400),
+                                              border: OutlineInputBorder(
+                                                  borderRadius: BorderRadius.circular(10),
+                                                  borderSide: BorderSide.none
+                                              )
+                                          ),
+                                        ),// Country
+                                        SizedBox(height: 10,),
+                                        TextField(
+                                          decoration: InputDecoration(
+                                              hoverColor: Colors.transparent,
+                                              fillColor: Color(0xffF5F5F5),
+                                              filled: true,
+                                              hintText: "State",
+                                              hintStyle: TextStyle(color: Color(0xff9B9B9B), fontSize: 18, fontWeight: FontWeight.w400),
+                                              border: OutlineInputBorder(
+                                                  borderRadius: BorderRadius.circular(10),
+                                                  borderSide: BorderSide.none
+                                              )
+                                          ),
+                                        ),//State
+                                        SizedBox(height: 10,),
+                                        TextField(
+                                          decoration: InputDecoration(
+                                              hoverColor: Colors.transparent,
+                                              fillColor: Color(0xffF5F5F5),
+                                              filled: true,
+                                              hintText: "City",
+                                              hintStyle: TextStyle(color: Color(0xff9B9B9B), fontSize: 18, fontWeight: FontWeight.w400),
+                                              border: OutlineInputBorder(
+                                                  borderRadius: BorderRadius.circular(10),
+                                                  borderSide: BorderSide.none
+                                              )
+                                          ),
+                                        ),// City
+                                        SizedBox(height: 10,),
+                                        TextField(
+                                          decoration: InputDecoration(
+                                              hoverColor: Colors.transparent,
+                                              fillColor: Color(0xffF5F5F5),
+                                              filled: true,
+                                              hintText: "Pincode",
+                                              hintStyle: TextStyle(color: Color(0xff9B9B9B), fontSize: 18, fontWeight: FontWeight.w400),
+                                              border: OutlineInputBorder(
+                                                  borderRadius: BorderRadius.circular(10),
+                                                  borderSide: BorderSide.none
+                                              )
+                                          ),
+                                        ),//Pincode
+                                        SizedBox(height: 10,),
+                                        TextField(
+                                          decoration: InputDecoration(
+                                              hoverColor: Colors.transparent,
+                                              fillColor: Color(0xffF5F5F5),
+                                              filled: true,
+                                              hintText: "Area",
+                                              hintStyle: TextStyle(color: Color(0xff9B9B9B), fontSize: 18, fontWeight: FontWeight.w400),
+                                              border: OutlineInputBorder(
+                                                  borderRadius: BorderRadius.circular(10),
+                                                  borderSide: BorderSide.none
+                                              )
+                                          ),
+                                        ),//Area
+                                        SizedBox(height: 10,),
+                                        TextField(
+                                          decoration: InputDecoration(
+                                              hoverColor: Colors.transparent,
+                                              fillColor: Color(0xffF5F5F5),
+                                              filled: true,
+                                              hintText: "Landmark",
+                                              hintStyle: TextStyle(color: Color(0xff9B9B9B), fontSize: 18, fontWeight: FontWeight.w400),
+                                              border: OutlineInputBorder(
+                                                  borderRadius: BorderRadius.circular(10),
+                                                  borderSide: BorderSide.none
+                                              )
+                                          ),
+                                        ),//LandMark
+                                        SizedBox(height: 10,),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Checkbox(
+                                                  value: true, onChanged: null),
+                                                Text("Home", style: TextStyle(color: Color(0xff9B9B9B), fontSize: 14, fontWeight: FontWeight.w400),)
+                                              ],
+                                            ),
+                                            Row(
+                                              children: [
+                                                Checkbox(
+                                                    value: false, onChanged: null),
+                                                Text("Work/Office", style: TextStyle(color: Color(0xff9B9B9B), fontSize: 14, fontWeight: FontWeight.w400),)
+                                              ],
+                                            ),
+                                            Row(
+                                              children: [
+                                                Checkbox(
+                                                    value: false, onChanged: null),
+                                                Text("Others", style: TextStyle(color: Color(0xff9B9B9B), fontSize: 14, fontWeight: FontWeight.w400),)
+                                              ],
+                                            ),
+                                          ],
+                                        ),// Check Box
+                                        SizedBox(height: 15,),
+                                        Center(
+                                          child: InkWell(
+                                            hoverColor: Colors.transparent,
+                                            onTap:(){
+                                            },
+                                            child: Container(
+                                              height: 50,
+                                              width: 200,
+                                              decoration: BoxDecoration(
+                                                  borderRadius: BorderRadius.circular(7),
+                                                  color: Color(0xff55AB60)
+                                              ),
+                                              child: Center(
+                                                child: Text("Save", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600),),
+                                              ),
+                                            ),
+                                          ),
+                                        ),//Save Button
+                                  
+                                      ],
+                                    ),
                                   ),
                                 ),
                               );
