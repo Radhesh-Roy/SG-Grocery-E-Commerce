@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class PaymentViewpage extends StatelessWidget {
-  const PaymentViewpage({super.key});
+   PaymentViewpage({super.key});
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: Drawer(
+        child: Center(child: Text("My Drawer")),
+      ),
       backgroundColor: Color(0xff55AB60),
       appBar: AppBar(
         backgroundColor: Color(0xff55AB60),
@@ -274,7 +279,72 @@ class PaymentViewpage extends StatelessWidget {
                       SizedBox(height: 15,),
                       InkWell(
                         hoverColor: Colors.transparent,
-                        onTap: (){},
+                        onTap: (){
+                          showModalBottomSheet(
+                            context: context,
+                            isScrollControlled: true,
+                            backgroundColor: Colors.transparent,
+                            builder: (context) {
+                              return Container(
+                                height: MediaQuery.of(context).size.height * 0.85, // top gap থাকবে
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding:  EdgeInsets.all(16.0),
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        crossAxisAlignment: CrossAxisAlignment.end,
+                                        children: [
+                                          Container(
+                                            height: 20,
+                                            width: 20,
+                                            decoration: BoxDecoration(
+                                                border: BoxBorder.all( width: 2),
+                                                borderRadius: BorderRadius.circular(50)
+                                            ),
+                                            child:
+                                            Center(child: Text("x", style: TextStyle(fontSize: 11, fontWeight: FontWeight.w600,),)),
+
+                                          ),
+                                        ],
+                                      ),// Cross Button
+                                      SizedBox(height: 15),
+                                      Text(
+                                        "Add New Address",
+                                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                                      ),
+
+                                      SizedBox(height: 20),
+
+                                      TextField(
+                                        decoration: InputDecoration(
+                                          labelText: "Address",
+                                          border: OutlineInputBorder(),
+                                        ),
+                                      ),
+
+                                      SizedBox(height: 15),
+
+                                      ElevatedButton(
+                                        onPressed: () {},
+                                        child: Text("Save Address"),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+
+                        },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
@@ -432,31 +502,65 @@ class PaymentViewpage extends StatelessWidget {
                       Image.asset("assets/card.png", height: 151,),
                       SizedBox(height: 15,),
                       Padding(padding: EdgeInsets.all(20),
-                      child: Row(
-                        children: [
-                          Expanded(
-                              flex:3,
+                      child: Container(
+                        height: 51,
+                        decoration: BoxDecoration(
+                            color: Color(0xff55AB60),
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                        child:
+                        Center(child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Text("Enter CVV", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.white),),
+                            ),
+                            Expanded(
                               child: Container(
                                 height: 51,
                                 decoration: BoxDecoration(
-                                  color: Color(0xff55AB60),
-                                  borderRadius: BorderRadius.only(topLeft: Radius.circular(10,), bottomLeft: Radius.circular(10))
-                                ),
-                                child: Center(child: Text("Enter CVV", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.white),)),
-                              )),
-                          Expanded(
-                              flex:5,
-                              child: Container(
-                                height: 51,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: BoxBorder.all(color: Color(0xff55AB60))
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: BoxBorder.all(color: Color(0xff55AB60))
                                 ),
                                 child: TextField(
+                                  decoration: InputDecoration(
+                                    hintText: "e.g 123",
+                                    fillColor: Colors.white,
+                                    hintStyle: TextStyle(color: Color(0xffBCBCBC), fontSize: 16, fontWeight: FontWeight.w400),
+                                    filled: true,
+                                    hoverColor: Colors.transparent,
+                                    border: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                      borderRadius: BorderRadius.circular(10),
+                                    )
+                                  ),
                                 ),
-                              )),
-                        ],
-                      ),)
+                              ),
+                            ),
+                          ],
+                        )),
+                      ),),// Enter CVV
+                      SizedBox(height: 15,),
+                      Center(
+                        child: InkWell(
+                          hoverColor: Colors.transparent,
+                          onTap:(){
+                          },
+                          child: Container(
+                            height: 50,
+                            width: 200,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(7),
+                                color: Color(0xff55AB60)
+                            ),
+                            child: Center(
+                              child: Text("Pay \$9.99", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600),),
+                            ),
+                          ),
+                        ),
+                      ),// Pay Button
+                      SizedBox(height: 10,),
+                      Text("Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.", style: TextStyle(color:Color(0xffADADAD), fontSize: 14, fontWeight: FontWeight.w400 ),)
                     ],
                   ),
                 ),
