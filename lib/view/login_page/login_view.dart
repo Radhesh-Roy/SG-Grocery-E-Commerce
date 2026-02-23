@@ -46,7 +46,9 @@ class LogInViewPage extends StatelessWidget {
               ),
 
               SizedBox(height: 20,),
+
               InkWell(
+
                 onTap: (){},
                 child: Container(
 
