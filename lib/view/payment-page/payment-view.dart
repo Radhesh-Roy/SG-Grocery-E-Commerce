@@ -3,14 +3,9 @@ import 'package:flutter/services.dart';
 
 class PaymentViewpage extends StatelessWidget {
    PaymentViewpage({super.key});
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
-      drawer: Drawer(
-        child: Center(child: Text("My Drawer")),
-      ),
       backgroundColor: Color(0xff55AB60),
       appBar: AppBar(
         backgroundColor: Color(0xff55AB60),
