@@ -20,6 +20,7 @@ class MyWalletView extends StatelessWidget {
         ),
         title: Text(
           "My Wallet",
+
           style: TextStyle(
             fontWeight: FontWeight.w700,
             fontSize: 22,
