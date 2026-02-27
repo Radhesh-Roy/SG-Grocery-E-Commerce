@@ -8,7 +8,9 @@ class MyWalletView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xff55AB60),
       appBar: AppBar(
+
         backgroundColor: Color(0xff55AB60),
+
         scrolledUnderElevation: 0,
         leading: InkWell(
           hoverColor: Colors.transparent,
