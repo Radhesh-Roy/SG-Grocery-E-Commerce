@@ -77,6 +77,7 @@ class MyWalletView extends StatelessWidget {
                           color: Colors.white,
                           boxShadow:[BoxShadow(color: Colors.grey.shade100, blurRadius:11, spreadRadius: 5, offset: Offset(3, 3)),]
                         ),
+
                         child: Padding(padding: EdgeInsets.all(15),
                         child: Row(
                           children: [
@@ -88,7 +89,8 @@ class MyWalletView extends StatelessWidget {
                                 SizedBox(height: 10,),
                                 Text("Transaction Id : 25917892598342", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color(0xff989898)),),
                               ],
-                            )),
+                            )
+                            ),
                             Expanded(flex:2,
                                 child: Center(child: Text("\$3", style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),)),
                             ),
