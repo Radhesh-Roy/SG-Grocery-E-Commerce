@@ -45,7 +45,9 @@ class MyWalletView extends StatelessWidget {
                   topLeft: Radius.circular(15),
                   topRight: Radius.circular(15),
                 ),
+
               ),
+
               child: Padding(
                 padding: EdgeInsets.all(12),
                 child: Column(
