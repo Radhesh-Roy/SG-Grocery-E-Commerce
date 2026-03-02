@@ -12,7 +12,6 @@ class MyWalletView extends StatelessWidget {
         scrolledUnderElevation: 0,
         leading: InkWell(
           hoverColor: Colors.transparent,
-
           onTap: () {},
           child: Image(
             image: AssetImage("assets/back.png"),
@@ -21,7 +20,6 @@ class MyWalletView extends StatelessWidget {
         ),
         title: Text(
           "My Wallet",
-
           style: TextStyle(
             fontWeight: FontWeight.w700,
             fontSize: 22,
