@@ -173,15 +173,7 @@ class SubscriptionViewPage extends StatelessWidget {
                       );
                     },),
                 ),
-               // Expanded(
-               //    child: Container(
-               //        height: 122, width: 271,
-               //      decoration: BoxDecoration(
-               //        image: DecorationImage(image: AssetImage("assets/frame.png"))
-               //
-               //        ),
-               //    ),
-               //  )
+
               ],),),
             ),
           ),
