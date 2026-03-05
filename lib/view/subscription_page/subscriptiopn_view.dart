@@ -60,6 +60,7 @@ class SubscriptionViewPage extends StatelessWidget {
                     Image.asset("assets/calender.png", height: 20, width: 20,)
                   ],
                 ),
+
                 SizedBox(height: 13,),
                 Expanded(
                   child: ListView.builder(
