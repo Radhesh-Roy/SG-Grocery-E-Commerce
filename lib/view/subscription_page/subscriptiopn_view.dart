@@ -101,9 +101,11 @@ class SubscriptionViewPage extends StatelessWidget {
                                         child: Column(spacing: 4,
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
+
                                             Text("Strawberry", style: TextStyle(color: Color(0xff656565), fontSize: 16, fontWeight: FontWeight.w600),),
                                             Text("500 ml", style: TextStyle(color: Color(0xff9B9B9B), fontSize: 16, fontWeight: FontWeight.w400),),
                                             Text("2\$", style: TextStyle(color: Color(0xff656565), fontSize: 16, fontWeight: FontWeight.w600),)
+
                                           ],
                                         ),
                                       )
