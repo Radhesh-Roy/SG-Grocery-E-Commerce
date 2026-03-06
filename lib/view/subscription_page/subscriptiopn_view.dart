@@ -74,7 +74,9 @@ class SubscriptionViewPage extends StatelessWidget {
                             child: Container(
                               padding: EdgeInsets.all(10),
                               height: 119,
+
                               decoration: BoxDecoration(
+
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(15)
                               ),
