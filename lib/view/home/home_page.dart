@@ -63,6 +63,7 @@ class HomeViewPage extends StatelessWidget {
               ],
             ), // category top
             SizedBox(height: 10,),
+
             SizedBox(
               height: 135,
               child: ListView.builder(
@@ -105,7 +106,7 @@ class HomeViewPage extends StatelessWidget {
                );
               },
               ),
-            ),
+            ),// Category
             SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
