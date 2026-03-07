@@ -172,7 +172,7 @@ class HomeViewPage extends StatelessWidget {
                     ),
                   ),
                 );
-            },)),//
+            },)),// Product
             SizedBox(height: 15,),
             Container(
               height: 191,
