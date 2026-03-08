@@ -288,6 +288,7 @@ class HomeViewPage extends StatelessWidget {
                       ),
                     );
                   },)),// Featured Item product
+
           ],
         ),),
       ),
