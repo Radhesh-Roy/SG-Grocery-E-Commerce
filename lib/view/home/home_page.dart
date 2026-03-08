@@ -228,7 +228,9 @@ class HomeViewPage extends StatelessWidget {
                       ),
                     );
                   },)),// deals of the week product
+
             SizedBox(height: 20,),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
