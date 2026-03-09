@@ -269,9 +269,11 @@ class HomeViewPage extends StatelessWidget {
                           spacing: 7,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
+
                             Center(child: Image.asset("assets/granola.png", height: 92, width: 86,)),
                             Text("Granola Premium Almond", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500,),),
                             Padding(
+
                               padding: const EdgeInsets.all(4),
                               child: Row(
 
