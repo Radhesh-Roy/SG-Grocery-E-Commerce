@@ -234,6 +234,7 @@ class HomeViewPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+
                 InkWell(
                     hoverColor: Colors.transparent,
                     onTap: (){},
