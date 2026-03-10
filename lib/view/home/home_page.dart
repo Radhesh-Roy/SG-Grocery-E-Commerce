@@ -247,6 +247,7 @@ class HomeViewPage extends StatelessWidget {
             ),// Featured Item
 
             SizedBox(height: 10,),
+
             SizedBox(
                 height: 200,
                 width: MediaQuery.sizeOf(context).width,
