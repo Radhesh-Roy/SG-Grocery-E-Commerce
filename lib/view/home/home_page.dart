@@ -249,6 +249,7 @@ class HomeViewPage extends StatelessWidget {
             SizedBox(height: 10,),
 
             SizedBox(
+
                 height: 200,
                 width: MediaQuery.sizeOf(context).width,
                 child: ListView.builder(
