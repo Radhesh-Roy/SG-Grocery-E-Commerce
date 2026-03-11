@@ -215,6 +215,7 @@ class HomeViewPage extends StatelessWidget {
                             color: Color(0xffF2FCF4),
                             borderRadius: BorderRadius.circular(8)
                         ),
+
                         child:
                             Column(
                               spacing: 7,
