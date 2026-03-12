@@ -194,6 +194,7 @@ class CartViewPage extends StatelessWidget {
                           ],
                         ),// Coupon Card
                         SizedBox(height: 10,),
+
                         Row(
                           spacing: 1,
                           children: [
