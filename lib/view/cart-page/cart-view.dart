@@ -210,6 +210,7 @@ class CartViewPage extends StatelessWidget {
                                           color: Color(0xffD6C533),
                                           borderRadius: BorderRadius.circular(10)
                                       ),
+
                                       child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
