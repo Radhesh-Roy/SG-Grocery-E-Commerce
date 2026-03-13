@@ -237,6 +237,7 @@ class HomeViewPage extends StatelessWidget {
               children: [
 
                 InkWell(
+
                     hoverColor: Colors.transparent,
                     onTap: (){},
                     child: Text("Featured Items", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700,),)),
