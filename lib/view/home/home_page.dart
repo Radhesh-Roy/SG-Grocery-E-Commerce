@@ -196,6 +196,7 @@ class HomeViewPage extends StatelessWidget {
                     child: Text("Explore All", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
               ],
             ),// deals of the week
+
             SizedBox(height: 10,),
 
             SizedBox(
