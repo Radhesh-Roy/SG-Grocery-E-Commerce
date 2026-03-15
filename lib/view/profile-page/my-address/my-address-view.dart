@@ -27,6 +27,7 @@ class MyAddressView extends StatelessWidget {
           ),
         ),// my address
       ),
+
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
