@@ -22,6 +22,7 @@ class ExploreViewPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
+
         scrollDirection: Axis.vertical,
         child: Padding(padding: EdgeInsets.all(10),
 
