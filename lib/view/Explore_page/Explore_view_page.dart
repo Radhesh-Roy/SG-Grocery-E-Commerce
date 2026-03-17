@@ -6,6 +6,7 @@ class ExploreViewPage extends StatelessWidget {
   const ExploreViewPage({super.key});
 
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
