@@ -15,6 +15,7 @@ class ExploreViewPage extends StatelessWidget {
         backgroundColor: Colors.white,
         scrolledUnderElevation: 0,
         leading: InkWell(
+
             hoverColor: Colors.transparent,
             onTap: (){},
             child: Image(image: AssetImage("assets/back.png",))),
