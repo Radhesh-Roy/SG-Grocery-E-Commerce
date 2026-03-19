@@ -13,6 +13,7 @@ class ExploreViewPage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+
         scrolledUnderElevation: 0,
         leading: InkWell(
 
