@@ -18,6 +18,7 @@ class ExploreViewPage extends StatelessWidget {
         leading: InkWell(
 
             hoverColor: Colors.transparent,
+
             onTap: (){},
             child: Image(image: AssetImage("assets/back.png",))),
         title: Text("Explore", style: TextStyle( fontWeight: FontWeight.w700, fontSize: 22
@@ -35,6 +36,7 @@ class ExploreViewPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 InkWell(
+
                     hoverColor: Colors.transparent,
                     onTap: (){},
                     child: Text("Groceries", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700,),)),
