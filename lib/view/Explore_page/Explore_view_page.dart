@@ -21,6 +21,7 @@ class ExploreViewPage extends StatelessWidget {
 
             onTap: (){},
             child: Image(image: AssetImage("assets/back.png",))),
+
         title: Text("Explore", style: TextStyle( fontWeight: FontWeight.w700, fontSize: 22
         ),),
         centerTitle: true,
