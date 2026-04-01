@@ -108,6 +108,7 @@ class ExploreViewPage extends StatelessWidget {
                       ),
                     );},)),// Groceries Product
             SizedBox(height: 10,),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
