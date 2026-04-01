@@ -48,6 +48,7 @@ class ExploreViewPage extends StatelessWidget {
               ],
             ),// Groceries
             SizedBox(height: 10,),
+
             SizedBox(
                 height: 150,
                 width: MediaQuery.sizeOf(context).width,
