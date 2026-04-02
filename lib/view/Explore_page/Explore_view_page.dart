@@ -48,7 +48,6 @@ class ExploreViewPage extends StatelessWidget {
               ],
             ),// Groceries
             SizedBox(height: 10,),
-
             SizedBox(
                 height: 150,
                 width: MediaQuery.sizeOf(context).width,
@@ -99,7 +98,6 @@ class ExploreViewPage extends StatelessWidget {
                                       ),
                                       child: Center(
                                         child: Text("+", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),),
-
                                       )
                                   ),
                                 ))
