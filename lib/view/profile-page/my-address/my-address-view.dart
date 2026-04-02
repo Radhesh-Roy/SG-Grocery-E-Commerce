@@ -86,7 +86,6 @@ class MyAddressView extends StatelessWidget {
                                             ),
                                             child:
                                             Center(child: Text("x", style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600,),)),
-
                                           ),
                                         ],
                                       ),// Cross Button
