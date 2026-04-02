@@ -11,10 +11,8 @@ class MyAddressView extends StatelessWidget {
         backgroundColor: Color(0xff55AB60),
         scrolledUnderElevation: 0,
         leading: InkWell(
-
           hoverColor: Colors.transparent,
           onTap: () {
-
           },
           child: Image(
             image: AssetImage("assets/back.png"),
