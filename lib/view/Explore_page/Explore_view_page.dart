@@ -4,40 +4,30 @@ import 'package:flutter/material.dart';
 
 class ExploreViewPage extends StatelessWidget {
   const ExploreViewPage({super.key});
-
   @override
-
   Widget build(BuildContext context) {
     return Scaffold(
-
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-
         scrolledUnderElevation: 0,
         leading: InkWell(
-
             hoverColor: Colors.transparent,
-
             onTap: (){},
             child: Image(image: AssetImage("assets/back.png",))),
-
         title: Text("Explore", style: TextStyle( fontWeight: FontWeight.w700, fontSize: 22
         ),),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-
         scrollDirection: Axis.vertical,
         child: Padding(padding: EdgeInsets.all(10),
-
         child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 InkWell(
-
                     hoverColor: Colors.transparent,
                     onTap: (){},
                     child: Text("Groceries", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700,),)),
