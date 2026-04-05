@@ -68,6 +68,7 @@ class MyAddressView extends StatelessWidget {
                                   topRight: Radius.circular(20),
                                 ),
                               ),
+
                               child: SingleChildScrollView(
                                 child: Padding(
                                   padding:  EdgeInsets.all(16.0),
