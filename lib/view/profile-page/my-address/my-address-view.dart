@@ -93,6 +93,7 @@ class MyAddressView extends StatelessWidget {
                                       ),// Cross Button
 
                                       SizedBox(height: 15),
+
                                       Text(
                                         "Add New Address",
                                         style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),
