@@ -62,6 +62,7 @@ class MyAddressView extends StatelessWidget {
                               height: MediaQuery.of(context).size.height * 0.85, // top gap থাকবে
                               width: double.infinity,
                               decoration: BoxDecoration(
+
                                 color: Colors.white,
                                 borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(20),
