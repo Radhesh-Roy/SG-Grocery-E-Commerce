@@ -79,6 +79,7 @@ class MyAddressView extends StatelessWidget {
                                         mainAxisAlignment: MainAxisAlignment.end,
                                         crossAxisAlignment: CrossAxisAlignment.end,
                                         children: [
+
                                           Container(
                                             height: 23,
                                             width: 23,
