@@ -30,7 +30,6 @@ class CartViewPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-
       body: Padding(
         padding: EdgeInsetsGeometry.all(10),
         child: Column(
@@ -49,8 +48,7 @@ class CartViewPage extends StatelessWidget {
               child: ListView.builder(
                 itemCount: 4,
                 shrinkWrap: true,
-                itemBuilder: (context, index) {
-
+                itemBuilder: (context, index)
                   if(index==3){
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

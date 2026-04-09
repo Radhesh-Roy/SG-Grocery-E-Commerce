@@ -16,7 +16,7 @@ import 'package:sggrocery/view/subscription_page/subscriptiopn_view.dart';
 void main() {
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
-    home: MyWalletView(),
+    home: PaymentViewpage(),
   ));
 }
 
