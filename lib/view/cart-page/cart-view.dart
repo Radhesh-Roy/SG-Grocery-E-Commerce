@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 class CartViewPage extends StatelessWidget {
   const CartViewPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +30,7 @@ class CartViewPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
+
       body: Padding(
         padding: EdgeInsetsGeometry.all(10),
         child: Column(
@@ -47,7 +49,7 @@ class CartViewPage extends StatelessWidget {
               child: ListView.builder(
                 itemCount: 4,
                 shrinkWrap: true,
-                itemBuilder: (context, index)
+                itemBuilder: (context, index) {
                   if(index==3){
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -535,6 +537,7 @@ class CartViewPage extends StatelessWidget {
                         child: Row(
                           spacing: 6,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                           children: [
                             InkWell(
                               onTap: () {},
