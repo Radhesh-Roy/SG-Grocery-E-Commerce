@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 class CartViewPage extends StatelessWidget {
   const CartViewPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -536,7 +535,6 @@ class CartViewPage extends StatelessWidget {
                         child: Row(
                           spacing: 6,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
                           children: [
                             InkWell(
                               onTap: () {},
