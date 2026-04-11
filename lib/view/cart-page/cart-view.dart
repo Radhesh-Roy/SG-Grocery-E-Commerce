@@ -45,6 +45,7 @@ class CartViewPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 15),
+
             Expanded(
               child: ListView.builder(
                 itemCount: 4,
