@@ -50,6 +50,7 @@ class CartViewPage extends StatelessWidget {
                 itemCount: 4,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
+
                   if(index==3){
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
