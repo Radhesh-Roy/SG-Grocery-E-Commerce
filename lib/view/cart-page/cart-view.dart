@@ -32,6 +32,7 @@ class CartViewPage extends StatelessWidget {
       ),
 
       body: Padding(
+
         padding: EdgeInsetsGeometry.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
