@@ -61,6 +61,7 @@ class CartViewPage extends StatelessWidget {
 
                         SizedBox(height: 20,),
                         Row(
+
                           spacing: 1,
                           children: [
                             Expanded(
