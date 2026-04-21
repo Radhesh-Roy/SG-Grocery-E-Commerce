@@ -58,6 +58,7 @@ class CartViewPage extends StatelessWidget {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+
                         SizedBox(height: 20,),
                         Row(
                           spacing: 1,
