@@ -10,6 +10,7 @@ class CartViewPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+
         backgroundColor: Colors.white,
         scrolledUnderElevation: 0,
         leading: InkWell(
