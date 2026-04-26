@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "25709771857",
+    "project_id": "sg-grocery-132c4",
+    "storage_bucket": "sg-grocery-132c4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:25709771857:android:f55fe4013039382fbbcc70",
+        "android_client_info": {
+          "package_name": "coderangan.com.sggrocery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3ZH4qXorp345Lb-_hrqhTaau7EAV36zo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

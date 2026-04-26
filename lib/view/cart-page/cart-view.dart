@@ -1,10 +1,7 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
-
 class CartViewPage extends StatelessWidget {
   const CartViewPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,12 +29,9 @@ class CartViewPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-
       body: Padding(
-
         padding: EdgeInsetsGeometry.all(10),
         child: Column(
-
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(

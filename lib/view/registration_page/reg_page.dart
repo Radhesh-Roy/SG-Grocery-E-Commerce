@@ -1,7 +1,13 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sggrocery/controller/auth_controller/reg/reg_controller.dart';
+import 'package:sggrocery/firebase_service.dart';
 
 class RegViewPage extends StatelessWidget {
-  const RegViewPage({super.key});
+   RegViewPage({super.key});
+   RegController controller=Get.put(RegController());
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +30,7 @@ class RegViewPage extends StatelessWidget {
                 Text("Your Name", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
                 SizedBox(height: 20,),
                 TextField(
+                  controller: controller.nameC,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)
@@ -35,49 +42,65 @@ class RegViewPage extends StatelessWidget {
                 Text("Email Id", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
                 SizedBox(height: 20,),
                 TextField(
+                  controller: controller.emailC,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Enter Your Email id", hintStyle: TextStyle(color: Color(0xff858FAD))
                   ),
-                ),
+                ),//Email field
                 SizedBox(height: 20,),
                 Text("Password", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
                 SizedBox(height: 20,),
                 TextField(
+                  controller: controller.passC,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Enter Your Password", hintStyle: TextStyle(color: Color(0xff858FAD))
                   ),
-                ),
+                ),//password field
                 SizedBox(height: 20,),
                 Text("Confirm Password", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
                 SizedBox(height: 20,),
                 TextField(
+                  controller: controller.confirmPassC,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Confirm Your Password", hintStyle: TextStyle(color: Color(0xff858FAD))
                   ),
-                ),
+                ),//Confirm password field
                 SizedBox(height: 20,),
                 Text("Contact Number", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
                 SizedBox(height: 20,),
                 TextField(
+                  controller: controller.phoneC,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Enter Your Contact Number", hintStyle: TextStyle(color: Color(0xff858FAD))
                   ),
-                ),
+                ),// phone number field
                 SizedBox(height: 20,),
                 InkWell(
-                  onTap: (){},
+                  onTap: ()async{
+
+                    log("${ db.ref("registration").child("user").push().set(
+                        {
+                          "name": controller.nameC,
+                          "email":controller.emailC,
+                          "password":controller.passC,
+                          "confirmPassword":controller.confirmPassC,
+                          "phone":controller.phoneC
+                        })}");
+
+
+                  },
                   child: Container(
 
                     height: 50,
@@ -147,7 +170,7 @@ class RegViewPage extends StatelessWidget {
                       ),
                     ),
                   ],
-                ),// google facebok
+                ),// google facebook
                 SizedBox(height: 20,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -155,9 +178,8 @@ class RegViewPage extends StatelessWidget {
                     Text("You Have Already an Account? ", style: TextStyle(color: Colors.grey, fontSize: 16, fontWeight: FontWeight.w400),),
                     InkWell(
                         hoverColor: Colors.transparent,
-                        onTap: (){},
-
-
+                        onTap: (){
+                        },
                         child: Text("logIn",style: TextStyle(  fontSize: 16, fontWeight: FontWeight.w700),))
                   ],
                 )

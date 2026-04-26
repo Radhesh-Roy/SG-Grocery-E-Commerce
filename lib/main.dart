@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sggrocery/view/Explore_page/Explore_view_page.dart';
@@ -13,10 +14,18 @@ import 'package:sggrocery/view/registration_page/reg_page.dart';
 import 'package:sggrocery/view/splash_screen/splash_screen.dart';
 import 'package:sggrocery/view/subscription_page/subscriptiopn_view.dart';
 
-void main() {
+import 'firebase_options.dart';
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
-    home: PaymentViewpage(),
+    home: RegViewPage(),
   ));
 }
 
