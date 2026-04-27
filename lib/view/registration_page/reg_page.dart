@@ -86,28 +86,33 @@ class RegViewPage extends StatelessWidget {
                         ),
                         hintText: "Enter Your Password", hintStyle: TextStyle(color: Color(0xff858FAD)),
                         suffixIcon:IconButton(onPressed: (){
-                          controller.checkVisible();
+                          controller.passvisible();
                         }, icon: Icon(controller.isVisibile.value?Icons.visibility_off: Icons.visibility))
                     ),
                   ),),//password field
                   SizedBox(height: 20,),
                   Text("Confirm Password", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
                   SizedBox(height: 20,),
-                  TextFormField(
-                    validator: (value) {
-                      if(value==null|| value.isEmpty){
-                        return "conform password";
-                      }
-                      return null;
-                    },
-                    controller: controller.confirmPassC,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10)
-                        ),
-                        hintText: "Confirm Your Password", hintStyle: TextStyle(color: Color(0xff858FAD))
-                    ),
-                  ),//Confirm password field
+                 Obx(()=> TextFormField(
+                   obscureText: controller.isVisibileC.value,
+                   validator: (value) {
+                     if(value==null|| value.isEmpty){
+                       return "conform password";
+                     }
+                     return null;
+                   },
+                   controller: controller.confirmPassC,
+                   decoration: InputDecoration(
+                       border: OutlineInputBorder(
+                           borderRadius: BorderRadius.circular(10)
+                       ),
+                       hintText: "Confirm Your Password", hintStyle: TextStyle(color: Color(0xff858FAD)),
+                     suffixIcon: IconButton(onPressed: (){
+                       controller.confirmPassvisible();
+
+                     }, icon: Icon(controller.isVisibileC.value? Icons.visibility_off: Icons.visibility))
+                   ),
+                 ),),//Confirm password field
                   SizedBox(height: 20,),
                   Text("Contact Number", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
                   SizedBox(height: 20,),
@@ -130,8 +135,14 @@ class RegViewPage extends StatelessWidget {
                   InkWell(
                     onTap: (){
                       if(_formKey.currentState!.validate()){
-                        return controller.setData();
+                        if(controller.passMatching()){
+                          return null;
+                        }
+                        else{
+                          controller.setData();
+                        }
                       };
+                      controller.passMatching();
                       log("Radhesh Roy");
                     },
                     child: Container(
