@@ -88,6 +88,7 @@ class RegViewPage extends StatelessWidget {
                 ),// phone number field
                 SizedBox(height: 20,),
                 InkWell(
+
                   onTap: ()async{
 
                     log("${ db.ref("registration").child("user").push().set(
