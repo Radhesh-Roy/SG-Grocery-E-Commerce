@@ -156,6 +156,7 @@ class RegViewPage extends StatelessWidget {
                       ),
                     ),
                   ),// login Button
+
                   Row(
                     children: [
                       Expanded(child: Divider()),
