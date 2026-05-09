@@ -79,10 +79,8 @@ class RegViewPage extends StatelessWidget {
                       }
                       return null;
                     },
-
                     controller: controller.passC,
                     decoration: InputDecoration(
-
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10)
                         ),
