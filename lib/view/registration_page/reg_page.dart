@@ -91,6 +91,7 @@ class RegViewPage extends StatelessWidget {
                     ),
                   ),),//password field
                   SizedBox(height: 20,),
+
                   Text("Confirm Password", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
                   SizedBox(height: 20,),
                  Obx(()=> TextFormField(
