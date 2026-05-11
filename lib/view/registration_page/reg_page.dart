@@ -86,6 +86,7 @@ class RegViewPage extends StatelessWidget {
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10)
                         ),
+
                         hintText: "Enter Your Password", hintStyle: TextStyle(color: Color(0xff858FAD)),
                         suffixIcon:IconButton(onPressed: (){
                           controller.passvisible();
