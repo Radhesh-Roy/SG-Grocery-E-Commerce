@@ -72,6 +72,7 @@ class RegViewPage extends StatelessWidget {
                   Text("Password", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
                   SizedBox(height: 20,),
                   Obx(()=>TextFormField(
+
                     obscureText: controller.isVisibile.value,
                     validator: (value) {
                       if(value== null|| value.isEmpty){
