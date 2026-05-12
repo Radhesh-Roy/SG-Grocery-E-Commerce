@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:sggrocery/controller/auth_controller/login/login_controller.dart';
 
 class LogInViewPage extends StatelessWidget {
-  const LogInViewPage({super.key});
+  LogInViewPage({super.key});
+  LoginController controller=Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
@@ -44,12 +48,13 @@ class LogInViewPage extends StatelessWidget {
                 ),
 
               ),
-
               SizedBox(height: 20,),
-
               InkWell(
+                onTap: (){
 
-                onTap: (){},
+                  controller.GetData();
+
+                },
                 child: Container(
 
                   height: 50,

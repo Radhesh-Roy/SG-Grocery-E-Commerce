@@ -6,6 +6,7 @@ import 'package:sggrocery/view/cart-page/cart-view.dart';
 import 'package:sggrocery/view/details_page/details_view.dart';
 import 'package:sggrocery/view/explore-item/exploreItem_view.dart';
 import 'package:sggrocery/view/home/home_page.dart';
+import 'package:sggrocery/view/login_page/login_view.dart';
 import 'package:sggrocery/view/payment-page/payment-view.dart';
 import 'package:sggrocery/view/profile-page/my-address/my-address-view.dart';
 import 'package:sggrocery/view/profile-page/my-wallet/my-wallet-view.dart';
@@ -25,7 +26,7 @@ void main() async{
 
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
-    home: RegViewPage(),
+    home: LogInViewPage(),
   ));
 }
 
