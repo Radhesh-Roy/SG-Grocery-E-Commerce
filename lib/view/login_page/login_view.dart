@@ -29,6 +29,7 @@ class LogInViewPage extends StatelessWidget {
               Text("Email Id", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18,),),
               SizedBox(height: 20,),
               TextField(
+                controller: controller.logEmail,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10)
@@ -40,6 +41,7 @@ class LogInViewPage extends StatelessWidget {
               Text("Password", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
               SizedBox(height: 20,),
               TextField(
+                controller: controller.logPass,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10)
