@@ -228,6 +228,7 @@ class RegViewPage extends StatelessWidget {
                       InkWell(
                           hoverColor: Colors.transparent,
                           onTap: (){
+                            Get.to(LogInViewPage());
                           },
                           child: Text("logIn",style: TextStyle(  fontSize: 16, fontWeight: FontWeight.w700),))
                     ],
