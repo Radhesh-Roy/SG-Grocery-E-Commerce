@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:sggrocery/controller/auth_controller/reg/reg_controller.dart';
 import 'package:sggrocery/firebase_service.dart';
+import 'package:sggrocery/view/home/home_page.dart';
 
 class LoginController extends GetxController{
 
@@ -33,6 +34,7 @@ class LoginController extends GetxController{
       if(isFound){
         Get.snackbar("Login Sucess", "Wellcome");
         log("login Success");
+        Get.offAll(HomeViewPage());
 
       }
       else{

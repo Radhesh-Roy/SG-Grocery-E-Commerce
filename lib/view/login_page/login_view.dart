@@ -71,16 +71,11 @@ class LogInViewPage extends StatelessWidget {
                 ),
                 SizedBox(height: 20,),
                 InkWell(
-                  onTap: (){
+                  onTap: ()async{
                     if(_formkey.currentState!.validate()){
-                      if(controller.GetData()== ){
-                        log("Radhesh Success");
 
-                      }
-                      else{
-                        log("Radhesh Failed");
+                      await controller.userData();
 
-                      }
                     }
                   },
                   child: Container(
