@@ -73,9 +73,7 @@ class LogInViewPage extends StatelessWidget {
                 InkWell(
                   onTap: ()async{
                     if(_formkey.currentState!.validate()){
-
                       await controller.userData();
-
                     }
                   },
                   child: Container(
@@ -89,11 +87,9 @@ class LogInViewPage extends StatelessWidget {
                     ),
                   ),
                 ),// login Button
-
                 Row(
                   children: [
                     Expanded(child: Divider()),
-
                     Padding(
                       padding: const EdgeInsets.all(10),
                       child: Text("Or Continue With", style: TextStyle(color: Colors.grey),),

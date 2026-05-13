@@ -186,7 +186,6 @@ class HomeViewPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-
                 InkWell(
                     hoverColor: Colors.transparent,
                     onTap: (){},
@@ -197,9 +196,7 @@ class HomeViewPage extends StatelessWidget {
                     child: Text("Explore All", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
               ],
             ),// deals of the week
-
             SizedBox(height: 10,),
-
             SizedBox(
                 height: 200,
                 width: MediaQuery.sizeOf(context).width,
@@ -218,7 +215,6 @@ class HomeViewPage extends StatelessWidget {
                             color: Color(0xffF2FCF4),
                             borderRadius: BorderRadius.circular(8)
                         ),
-
                         child:
                             Column(
                               spacing: 7,
@@ -232,20 +228,16 @@ class HomeViewPage extends StatelessWidget {
                       ),
                     );
                   },)),// deals of the week product
-
             SizedBox(height: 20,),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-
                 InkWell(
 
                     hoverColor: Colors.transparent,
                     onTap: (){},
                     child: Text("Featured Items", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700,),)),
                 InkWell(
-
                     hoverColor: Colors.transparent,
                     onTap: (){},
                     child: Text("Explore All", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
@@ -255,7 +247,6 @@ class HomeViewPage extends StatelessWidget {
             SizedBox(height: 10,),
 
             SizedBox(
-
                 height: 200,
                 width: MediaQuery.sizeOf(context).width,
                 child: ListView.builder(
@@ -279,19 +270,15 @@ class HomeViewPage extends StatelessWidget {
                           spacing: 7,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-
                             Center(child: Image.asset("assets/granola.png", height: 92, width: 86,)),
                             Text("Granola Premium Almond", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500,),),
                             Padding(
-
                               padding: const EdgeInsets.all(4),
                               child: Row(
-
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text("\$22", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Color(0xff55AB60)),),
                                   Text("1KG", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700,),)
-
                                 ]
                               ),
                             )
@@ -300,7 +287,6 @@ class HomeViewPage extends StatelessWidget {
                       ),
                     );
                   },)),// Featured Item product
-
           ],
         ),),
       ),
