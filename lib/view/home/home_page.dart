@@ -40,7 +40,7 @@ class HomeViewPage extends StatelessWidget {
                         width: MediaQuery.of(context).size.width,
                         margin: EdgeInsets.symmetric(horizontal: 5.0),
                         decoration: BoxDecoration(
-                          image: DecorationImage(image: AssetImage("assets/slider1.png",),fit: BoxFit.cover),
+                          image: DecorationImage(image: AssetImage("assets/card.png",),fit: BoxFit.cover),
                           borderRadius: BorderRadius.circular(10)
                         ),
                     );
@@ -87,7 +87,7 @@ class HomeViewPage extends StatelessWidget {
                            height: 87,
                            width: 87,
                            decoration: BoxDecoration(
-                             image: DecorationImage(image: AssetImage("assets/catagory1.png"), fit: BoxFit.cover)
+                             image: DecorationImage(image: AssetImage("assets/oil.png"), fit: BoxFit.cover)
                            ),
                          ),
                          Container(
@@ -220,7 +220,7 @@ class HomeViewPage extends StatelessWidget {
                               spacing: 7,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Center(child: Image.asset("assets/softdrink.png", height: 92, width: 86,)),
+                                Center(child: Image.asset("assets/doftdrinks.png", height: 92, width: 86,)),
                                 Text("Soft Drinks", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500,),),
                                 Text("Up to 40% off", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Color(0xff55AB60)),)
                               ],
@@ -243,9 +243,7 @@ class HomeViewPage extends StatelessWidget {
                     child: Text("Explore All", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
               ],
             ),// Featured Item
-
             SizedBox(height: 10,),
-
             SizedBox(
                 height: 200,
                 width: MediaQuery.sizeOf(context).width,
