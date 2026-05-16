@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sggrocery/controller/auth_controller/reg/reg_controller.dart';
 import 'package:sggrocery/firebase_service.dart';
+import 'package:sggrocery/view/login_page/login_view.dart';
 
 class RegViewPage extends StatelessWidget {
    RegViewPage({super.key});
@@ -129,6 +130,7 @@ class RegViewPage extends StatelessWidget {
                       }
                       return null;
                     },
+                    keyboardType: TextInputType.phone,
                     controller: controller.phoneC,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -142,14 +144,15 @@ class RegViewPage extends StatelessWidget {
                     onTap: (){
                       if(_formKey.currentState!.validate()){
                         if(controller.passMatching()){
-                          return null;
+                          controller.setData();
+                          Get.to(LogInViewPage());
                         }
                         else{
-                          controller.setData();
+
+                          Get.snackbar("Password not matched",
+                              "Enter same pass and confirm pass");
                         }
                       };
-                      controller.passMatching();
-                      log("Radhesh Roy");
                     },
                     child: Container(
                       height: 50,
@@ -226,6 +229,7 @@ class RegViewPage extends StatelessWidget {
                       InkWell(
                           hoverColor: Colors.transparent,
                           onTap: (){
+                            Get.to(LogInViewPage());
                           },
                           child: Text("logIn",style: TextStyle(  fontSize: 16, fontWeight: FontWeight.w700),))
                     ],

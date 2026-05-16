@@ -40,11 +40,12 @@ class RegController extends GetxController{
   }
 
    passMatching(){
-    if(passC == confirmPassC && confirmPassC== passC){
+    if(passC.value == confirmPassC.value && confirmPassC.value== passC.value){
       return true;
     }
     else{
       log("password and Confirm Pass are not same");
+      return false;
     }
 
   }
