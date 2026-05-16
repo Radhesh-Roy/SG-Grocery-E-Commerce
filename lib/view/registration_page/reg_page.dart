@@ -103,6 +103,7 @@ class RegViewPage extends StatelessWidget {
 
                    obscureText: controller.isVisibileC.value,
                    validator: (value) {
+
                      if(value==null|| value.isEmpty){
                        return "conform password";
                      }
