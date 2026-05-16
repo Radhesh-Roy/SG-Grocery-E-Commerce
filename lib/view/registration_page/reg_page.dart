@@ -99,6 +99,7 @@ class RegViewPage extends StatelessWidget {
                   SizedBox(height: 20,),
 
                  Obx(()=> TextFormField(
+
                    obscureText: controller.isVisibileC.value,
                    validator: (value) {
                      if(value==null|| value.isEmpty){
