@@ -75,6 +75,7 @@ class RegViewPage extends StatelessWidget {
                   Obx(()=>TextFormField(
 
                     obscureText: controller.isVisibile.value,
+
                     validator: (value) {
                       if(value== null|| value.isEmpty){
                         return "enter password";
