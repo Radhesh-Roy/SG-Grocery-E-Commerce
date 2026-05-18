@@ -70,6 +70,7 @@ class RegViewPage extends StatelessWidget {
 
                   ),//Email field
                   SizedBox(height: 20,),
+
                   Text("Password", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
                   SizedBox(height: 20,),
                   Obx(()=>TextFormField(
