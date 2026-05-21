@@ -51,6 +51,7 @@ class RegViewPage extends StatelessWidget {
                     ),
                   ),// Name Field
                   SizedBox(height: 20,),
+
                   Text("Email Id", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
                   SizedBox(height: 20,),
                   TextFormField(
