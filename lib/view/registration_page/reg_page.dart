@@ -54,6 +54,7 @@ class RegViewPage extends StatelessWidget {
                   Text("Email Id", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
                   SizedBox(height: 20,),
                   TextFormField(
+
                     validator: (value) {
                       if(value == null|| value.isEmpty){
                         return "enter email";
