@@ -68,16 +68,13 @@ class RegViewPage extends StatelessWidget {
                         ),
                         hintText: "Enter Your Email id", hintStyle: TextStyle(color: Color(0xff858FAD))
                     ),
-
                   ),//Email field
                   SizedBox(height: 20,),
 
                   Text("Password", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
                   SizedBox(height: 20,),
                   Obx(()=>TextFormField(
-
                     obscureText: controller.isVisibile.value,
-
                     validator: (value) {
                       if(value== null|| value.isEmpty){
                         return "enter password";
