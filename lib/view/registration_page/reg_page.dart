@@ -51,6 +51,7 @@ class RegViewPage extends StatelessWidget {
                     ),
                   ),// Name Field
                   SizedBox(height: 20,),
+
                   Text("Email Id", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
                   SizedBox(height: 20,),
                   TextFormField(
@@ -67,13 +68,12 @@ class RegViewPage extends StatelessWidget {
                         ),
                         hintText: "Enter Your Email id", hintStyle: TextStyle(color: Color(0xff858FAD))
                     ),
-
                   ),//Email field
                   SizedBox(height: 20,),
+
                   Text("Password", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
                   SizedBox(height: 20,),
                   Obx(()=>TextFormField(
-
                     obscureText: controller.isVisibile.value,
                     validator: (value) {
                       if(value== null|| value.isEmpty){
@@ -100,8 +100,10 @@ class RegViewPage extends StatelessWidget {
                   SizedBox(height: 20,),
 
                  Obx(()=> TextFormField(
+
                    obscureText: controller.isVisibileC.value,
                    validator: (value) {
+
                      if(value==null|| value.isEmpty){
                        return "conform password";
                      }
