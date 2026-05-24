@@ -197,6 +197,7 @@ class HomeViewPage extends StatelessWidget {
               ],
             ),// deals of the week
             SizedBox(height: 10,),
+
             SizedBox(
                 height: 200,
                 width: MediaQuery.sizeOf(context).width,
