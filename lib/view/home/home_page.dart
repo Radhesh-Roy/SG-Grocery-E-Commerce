@@ -203,6 +203,7 @@ class HomeViewPage extends StatelessWidget {
                 height: 200,
 
                 width: MediaQuery.sizeOf(context).width,
+
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 8,
