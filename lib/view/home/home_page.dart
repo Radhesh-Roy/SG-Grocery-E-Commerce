@@ -203,6 +203,7 @@ class HomeViewPage extends StatelessWidget {
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 8,
+
                   itemBuilder: (context, index) {
                     return InkWell(
                       hoverColor: Colors.transparent,
