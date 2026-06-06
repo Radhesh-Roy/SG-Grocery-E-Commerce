@@ -206,6 +206,7 @@ class HomeViewPage extends StatelessWidget {
 
                   itemBuilder: (context, index) {
                     return InkWell(
+
                       hoverColor: Colors.transparent,
                       onTap: (){},
                       child: Container(
