@@ -63,7 +63,6 @@ class HomeViewPage extends StatelessWidget {
               ],
             ), // category top
             SizedBox(height: 10,),
-
             SizedBox(
               height: 135,
               child: ListView.builder(
