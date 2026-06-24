@@ -2,12 +2,17 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:sggrocery/controller/home_controller/home_controller.dart';
 
 class HomeViewPage extends StatelessWidget {
   const HomeViewPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    HomeController controller=Get.put(HomeController());
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -66,13 +71,13 @@ class HomeViewPage extends StatelessWidget {
             SizedBox(
               height: 135,
               child: ListView.builder(
-                itemCount: 7,
+                itemCount: controller.category.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                return InkWell(
                  hoverColor: Colors.transparent,
                  onTap: (){
-                   log("category");
+                   log("$index");
                  },
                  child: Container(
                    margin: EdgeInsets.all(5),
@@ -86,7 +91,7 @@ class HomeViewPage extends StatelessWidget {
                            height: 87,
                            width: 87,
                            decoration: BoxDecoration(
-                             image: DecorationImage(image: AssetImage("assets/oil.png"), fit: BoxFit.cover)
+                             image: DecorationImage(image: AssetImage("${controller.category[index]["image"]}"), fit: BoxFit.cover)
                            ),
                          ),
                          Container(
@@ -96,7 +101,7 @@ class HomeViewPage extends StatelessWidget {
                              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5), bottomRight: Radius.circular(5)),
                              color: Color(0xff55AB60)
                            ),
-                           child: Center(child: Text("Groecries", style: TextStyle(fontSize: 12, color: Colors.white, fontWeight: FontWeight.w600),)),
+                           child: Center(child: Text("${controller.category[index]["title"]}", style: TextStyle(fontSize: 12, color: Colors.white, fontWeight: FontWeight.w600),)),
 
                          )
                        ],
