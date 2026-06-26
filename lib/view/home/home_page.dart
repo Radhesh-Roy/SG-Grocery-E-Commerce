@@ -2,9 +2,11 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:sggrocery/controller/home_controller/home_controller.dart';
+import 'package:sggrocery/view/Explore_page/Explore_view_page.dart';
 
 class HomeViewPage extends StatelessWidget {
   const HomeViewPage({super.key});
@@ -63,7 +65,9 @@ class HomeViewPage extends StatelessWidget {
                     child: Text("Top Categories", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700,),)),
                 InkWell(
                   hoverColor: Colors.transparent,
-                    onTap: (){},
+                    onTap: (){
+                    Get.to(ExploreViewPage());
+                    },
                     child: Text("Explore All", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
               ],
             ), // category top
@@ -131,7 +135,7 @@ class HomeViewPage extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width,
                 child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: 8,
+              itemCount: controller.topProduct.length,
               itemBuilder: (context, index) {
                 return InkWell(
                   hoverColor: Colors.transparent,
@@ -150,9 +154,9 @@ class HomeViewPage extends StatelessWidget {
                           spacing: 7,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Center(child: Image.asset("assets/topProduct1.png", height: 92, width: 86,)),
-                            Text("Fortune Rice", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500,),),
-                            Text("\$3/kg", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),)
+                            Center(child: Image.asset("${controller.topProduct[index]["image"]}", height: 92, width: 86,)),
+                            Text("${controller.topProduct[index]["title"]}", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500,),overflow: TextOverflow.ellipsis, maxLines: 2,),
+                            Text("Tk: ${controller.topProduct[index]["price"]}", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),)
                           ],
                         ),
                         Positioned(
@@ -167,7 +171,7 @@ class HomeViewPage extends StatelessWidget {
                           ),
                               child: Column(
                                 children: [
-                                  Text("37%", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),),
+                                  Text("${controller.topProduct[index]["discount-offer"]}%", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),),
                                   Text("OFF", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),),
                                 ],
                               )

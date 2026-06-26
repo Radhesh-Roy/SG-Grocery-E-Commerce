@@ -24,14 +24,22 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(GetMaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: "SG Glocery",
-    initialRoute: "/bottomBar",
-    routes: {
-      "/splash": (context)=>SplashScreen(),
-      "/bottomBar": (context)=>BottomBarView()
-    },
-  ));
+  runApp(MyApp());
 }
 
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "SG Glocery",
+      initialRoute: "/bottomBar",
+      routes: {
+        "/splash": (context)=>SplashScreen(),
+        "/bottomBar": (context)=>BottomBarView()
+      },
+    );
+  }
+}
