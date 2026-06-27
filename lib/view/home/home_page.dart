@@ -116,7 +116,6 @@ class HomeViewPage extends StatelessWidget {
               ),
             ),// Category
             SizedBox(height: 20,),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -131,7 +130,6 @@ class HomeViewPage extends StatelessWidget {
               ],
             ),// Top Products
             SizedBox(height: 10,),
-
             SizedBox(
               height: 200,
                 width: MediaQuery.sizeOf(context).width,
