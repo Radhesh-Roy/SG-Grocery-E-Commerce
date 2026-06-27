@@ -37,6 +37,7 @@ class HomeViewPage extends StatelessWidget {
                 ),
               ),
             ), // Searchbar
+
             SizedBox(height: 20,),
             CarouselSlider(
               options: CarouselOptions(height: 154, viewportFraction: 1, ),
