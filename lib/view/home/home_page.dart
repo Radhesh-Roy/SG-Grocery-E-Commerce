@@ -211,11 +211,9 @@ class HomeViewPage extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 8,
-
+                  itemCount: controller.dealOfWeek.length,
                   itemBuilder: (context, index) {
                     return InkWell(
-
                       hoverColor: Colors.transparent,
                       onTap: (){},
                       child: Container(
@@ -231,9 +229,9 @@ class HomeViewPage extends StatelessWidget {
                               spacing: 7,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Center(child: Image.asset("assets/doftdrinks.png", height: 92, width: 86,)),
-                                Text("Soft Drinks", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500,),),
-                                Text("Up to 40% off", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Color(0xff55AB60)),)
+                                Center(child: Image.network("${controller.dealOfWeek[index]["image"]}", height: 92, width: 86,)),
+                                Text("${controller.dealOfWeek[index]["title"]}", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500,),),
+                                Text("Up to ${controller.dealOfWeek[index]["discount-offer"]}% off", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Color(0xff55AB60)),)
                               ],
                             ),
                       ),
@@ -260,7 +258,7 @@ class HomeViewPage extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 8,
+                  itemCount: controller.featureItem.length,
                   itemBuilder: (context, index) {
                     return InkWell(
                       hoverColor: Colors.transparent,
@@ -279,15 +277,15 @@ class HomeViewPage extends StatelessWidget {
                           spacing: 7,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Center(child: Image.asset("assets/granola.png", height: 92, width: 86,)),
-                            Text("Granola Premium Almond", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500,),),
+                            Center(child: Image.network("${controller.featureItem[index]["image"]}", height: 92, width: 86,)),
+                            Text("${controller.featureItem[index]["title"]}", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500,),),
                             Padding(
                               padding: const EdgeInsets.all(4),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text("\$22", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Color(0xff55AB60)),),
-                                  Text("1KG", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700,),)
+                                  Text("\$${controller.featureItem[index]["price"]}", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Color(0xff55AB60)),),
+                                  Text("${controller.featureItem[index]["net-weight"]}", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700,),)
                                 ]
                               ),
                             )
