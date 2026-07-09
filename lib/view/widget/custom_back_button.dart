@@ -9,7 +9,6 @@ class CutomBackButton extends StatelessWidget {
   const CutomBackButton({
     super.key, required this.color,
   });
-
   @override
   Widget build(BuildContext context) {
     return InkWell(
