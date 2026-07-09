@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widget/custom_back_button.dart';
+
 class ExploreItemViewPage extends StatelessWidget {
   const ExploreItemViewPage({super.key});
 
@@ -10,10 +12,7 @@ class ExploreItemViewPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xff55AB60),
         scrolledUnderElevation: 0,
-        leading: InkWell(
-            hoverColor: Colors.transparent,
-            onTap: (){},
-            child: Image(image: AssetImage("assets/back.png",), color: Colors.white,)),
+        leading: CutomBackButton(color: Colors.white,),
         title: Text("Fruits", style: TextStyle( fontWeight: FontWeight.w700, fontSize: 22, color: Colors.white
         ),),
       ),

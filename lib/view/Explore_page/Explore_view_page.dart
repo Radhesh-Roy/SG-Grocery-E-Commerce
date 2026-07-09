@@ -1,8 +1,11 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+
+import '../explore-item/exploreItem_view.dart';
 
 class ExploreViewPage extends StatelessWidget {
   const ExploreViewPage({super.key});
@@ -37,7 +40,10 @@ class ExploreViewPage extends StatelessWidget {
                     child: Text("Groceries", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700,),)),
                 InkWell(
                     hoverColor: Colors.transparent,
-                    onTap: (){},
+                    onTap: (){
+                      Get.to(ExploreItemViewPage());
+
+                    },
                     child: Text("See All", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
               ],
             ),// Groceries
