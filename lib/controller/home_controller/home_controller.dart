@@ -195,7 +195,6 @@ class HomeController extends GetxController{
     },
   ].obs;
 
-
   // Glocery Product
 
   var groceryProducts = [
