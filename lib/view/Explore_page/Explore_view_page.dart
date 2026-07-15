@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 
+import '../details_page/details_view.dart';
 import '../explore-item/exploreItem_view.dart';
 
 class ExploreViewPage extends StatelessWidget {
@@ -41,7 +42,7 @@ class ExploreViewPage extends StatelessWidget {
                 InkWell(
                     hoverColor: Colors.transparent,
                     onTap: (){
-                      Get.to(ExploreItemViewPage());
+                      Get.to(ExploreItemViewPage(category: 'Gloceries',));
 
                     },
                     child: Text("See All", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
@@ -69,16 +70,21 @@ class ExploreViewPage extends StatelessWidget {
                         ),
                         child: Stack(
                           children: [
-                            Column(
-                              spacing: 3,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Center(child: Image.asset("assets/powder.png", height: 69, width: 69,)),
-                                Text("Jaggery Powder", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),),
-                                Text("500 g", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
-                                Text("\$3", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
-                              ],
+                            InkWell(
+                              onTap: (){
+                                Get.to(DetailsView());
+                              },
+                              child: Column(
+                                spacing: 3,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Center(child: Image.asset("assets/powder.png", height: 69, width: 69,)),
+                                  Text("Jaggery Powder", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),),
+                                  Text("500 g", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
+                                  Text("\$3", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
+                                ],
+                              ),
                             ),
                             Positioned(
                                 bottom: 10,
@@ -116,7 +122,10 @@ class ExploreViewPage extends StatelessWidget {
                     child: Text("Vegetables", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700,),)),
                 InkWell(
                     hoverColor: Colors.transparent,
-                    onTap: (){},
+                    onTap: (){
+                      Get.to(ExploreItemViewPage(category: 'Vegetables',));
+
+                    },
                     child: Text("See All", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
               ],
             ),// Vegetables
@@ -189,7 +198,9 @@ class ExploreViewPage extends StatelessWidget {
                     child: Text("Fruits", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700,),)),
                 InkWell(
                     hoverColor: Colors.transparent,
-                    onTap: (){},
+                    onTap: (){
+                      Get.to(ExploreItemViewPage(category: 'Fruits',));
+                    },
                     child: Text("See All", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
               ],
             ),// Fruits
@@ -262,7 +273,9 @@ class ExploreViewPage extends StatelessWidget {
                     child: Text("Dairy Products", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700,),)),
                 InkWell(
                     hoverColor: Colors.transparent,
-                    onTap: (){},
+                    onTap: (){
+                      Get.to(ExploreItemViewPage(category: 'Dairy Products',));
+                    },
                     child: Text("See All", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
               ],
             ),// Dairy Products
@@ -335,7 +348,9 @@ class ExploreViewPage extends StatelessWidget {
                     child: Text("Bakery Items", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700,),)),
                 InkWell(
                     hoverColor: Colors.transparent,
-                    onTap: (){},
+                    onTap: (){
+                      Get.to(ExploreItemViewPage(category: 'Bakery Items',));
+                    },
                     child: Text("See All", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
               ],
             ),// Bekary item

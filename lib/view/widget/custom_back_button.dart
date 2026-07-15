@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 
-class CutomBackButton extends StatelessWidget {
+class CustomBackButton extends StatelessWidget {
 
   final Color color;
-  const CutomBackButton({
+  const CustomBackButton({
     super.key, required this.color,
   });
   @override

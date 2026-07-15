@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sggrocery/view/widget/custom_back_button.dart';
 
 class DetailsView extends StatelessWidget {
   const DetailsView({super.key});
@@ -10,14 +11,7 @@ class DetailsView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xff55AB60),
         scrolledUnderElevation: 0,
-        leading: InkWell(
-          hoverColor: Colors.transparent,
-          onTap: () {},
-          child: Image(
-            image: AssetImage("assets/back.png"),
-            color: Colors.white,
-          ),
-        ),
+        leading: CustomBackButton(color: Colors.white),
         title: Text(
           "Details",
           style: TextStyle(

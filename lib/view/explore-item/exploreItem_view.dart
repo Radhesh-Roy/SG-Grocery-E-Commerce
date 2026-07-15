@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../widget/custom_back_button.dart';
 
 class ExploreItemViewPage extends StatelessWidget {
-  const ExploreItemViewPage({super.key});
+
+  final String category;
+  const ExploreItemViewPage({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +14,8 @@ class ExploreItemViewPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xff55AB60),
         scrolledUnderElevation: 0,
-        leading: CutomBackButton(color: Colors.white,),
-        title: Text("Fruits", style: TextStyle( fontWeight: FontWeight.w700, fontSize: 22, color: Colors.white
+        leading: CustomBackButton(color: Colors.white,),
+        title: Text("$category", style: TextStyle( fontWeight: FontWeight.w700, fontSize: 22, color: Colors.white
         ),),
       ),
       body: Container(
