@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:sggrocery/controller/home_controller/home_controller.dart';
 
 import '../details_page/details_view.dart';
 import '../explore-item/exploreItem_view.dart';
@@ -12,6 +13,7 @@ class ExploreViewPage extends StatelessWidget {
   const ExploreViewPage({super.key});
   @override
   Widget build(BuildContext context) {
+    HomeController controller=HomeController();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -54,7 +56,7 @@ class ExploreViewPage extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 8,
+                  itemCount: controller.categoryProduct["grocery"].length,
                   itemBuilder: (context, index) {
                     return InkWell(
                       hoverColor: Colors.transparent,
@@ -72,6 +74,7 @@ class ExploreViewPage extends StatelessWidget {
                           children: [
                             InkWell(
                               onTap: (){
+                                log("${controller.categoryProduct["grocery"][index]}");
                                 Get.to(DetailsView());
                               },
                               child: Column(
@@ -79,10 +82,10 @@ class ExploreViewPage extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Center(child: Image.asset("assets/powder.png", height: 69, width: 69,)),
-                                  Text("Jaggery Powder", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),),
-                                  Text("500 g", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
-                                  Text("\$3", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
+                                  Center(child: Image.network("${controller.categoryProduct["grocery"][index]["img"].toString()}", height: 69, width: 69,)),
+                                  Text("${controller.categoryProduct["grocery"][index]["title"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),overflow: TextOverflow.ellipsis, maxLines: 1,),
+                                  Text("${controller.categoryProduct["grocery"][index]["net_weight"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
+                                  Text("${controller.categoryProduct["grocery"][index]["price"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
                                 ],
                               ),
                             ),
@@ -112,7 +115,6 @@ class ExploreViewPage extends StatelessWidget {
                       ),
                     );},)),// Groceries Product
             SizedBox(height: 10,),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -135,7 +137,7 @@ class ExploreViewPage extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 8,
+                  itemCount: controller.categoryProduct["vegetable"].length,
                   itemBuilder: (context, index) {
                     return InkWell(
                       hoverColor: Colors.transparent,
@@ -156,10 +158,10 @@ class ExploreViewPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Center(child: Image.asset("assets/tomato.png", height: 69, width: 69,)),
-                                Text("Tomato", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),),
-                                Text("1KG", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
-                                Text("\$2", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
+                                Center(child: Image.network("${controller.categoryProduct["vegetable"][index]["img"].toString()}", height: 69, width: 69,)),
+                                Text("${controller.categoryProduct["vegetable"][index]["title"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),overflow: TextOverflow.ellipsis, maxLines: 1,),
+                                Text("${controller.categoryProduct["vegetable"][index]["net_weight"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
+                                Text("${controller.categoryProduct["vegetable"][index]["price"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
                               ],
                             ),
                             Positioned(
@@ -210,7 +212,7 @@ class ExploreViewPage extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 8,
+                  itemCount: controller.categoryProduct["fruit"].length,
                   itemBuilder: (context, index) {
                     return InkWell(
                       hoverColor: Colors.transparent,
@@ -231,10 +233,10 @@ class ExploreViewPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Center(child: Image.asset("assets/strawberry.png", height: 69, width: 69,)),
-                                Text("Strawberry", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),),
-                                Text("1Kg", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
-                                Text("\$4", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
+                                Center(child: Image.network("${controller.categoryProduct["fruit"][index]["img"].toString()}", height: 69, width: 69,)),
+                                Text("${controller.categoryProduct["fruit"][index]["title"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),overflow: TextOverflow.ellipsis, maxLines: 1,),
+                                Text("${controller.categoryProduct["fruit"][index]["net_weight"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
+                                Text("${controller.categoryProduct["fruit"][index]["price"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
                               ],
                             ),
                             Positioned(
@@ -285,7 +287,7 @@ class ExploreViewPage extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 8,
+                  itemCount: controller.categoryProduct["dairy"].length,
                   itemBuilder: (context, index) {
                     return InkWell(
                       hoverColor: Colors.transparent,
@@ -306,10 +308,10 @@ class ExploreViewPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Center(child: Image.asset("assets/milk.png", height: 69, width: 69,)),
-                                Text("A2MATE milk", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),),
-                                Text("0.5 Ltr.", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
-                                Text("\$2", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
+                                Center(child: Image.network("${controller.categoryProduct["dairy"][index]["img"].toString()}", height: 69, width: 69,)),
+                                Text("${controller.categoryProduct["dairy"][index]["title"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),overflow: TextOverflow.ellipsis, maxLines: 1,),
+                                Text("${controller.categoryProduct["dairy"][index]["net_weight"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
+                                Text("${controller.categoryProduct["dairy"][index]["price"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
                               ],
                             ),
                             Positioned(
@@ -360,7 +362,7 @@ class ExploreViewPage extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 8,
+                  itemCount: controller.categoryProduct["bakery"].length,
                   itemBuilder: (context, index) {
                     return InkWell(
                       hoverColor: Colors.transparent,
@@ -381,10 +383,10 @@ class ExploreViewPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Center(child: Image.asset("assets/powder.png", height: 69, width: 69,)),
-                                Text("Parle Rusk", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),),
-                                Text("500 g", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
-                                Text("\$3", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
+                                Center(child: Image.network("${controller.categoryProduct["bakery"][index]["img"].toString()}", height: 69, width: 69,)),
+                                Text("${controller.categoryProduct["bakery"][index]["title"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),overflow: TextOverflow.ellipsis, maxLines: 1,),
+                                Text("${controller.categoryProduct["bakery"][index]["net_weight"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
+                                Text("${controller.categoryProduct["bakery"][index]["price"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
                               ],
                             ),
                             Positioned(

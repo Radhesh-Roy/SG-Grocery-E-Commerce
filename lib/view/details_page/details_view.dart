@@ -7,7 +7,6 @@ class DetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-
       appBar: AppBar(
         backgroundColor: Color(0xff55AB60),
         scrolledUnderElevation: 0,
