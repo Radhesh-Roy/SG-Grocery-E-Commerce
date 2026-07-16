@@ -74,8 +74,8 @@ class ExploreViewPage extends StatelessWidget {
                           children: [
                             InkWell(
                               onTap: (){
-                                log("${controller.categoryProduct["grocery"][index]}");
-                                Get.to(DetailsView());
+                                var product=controller.categoryProduct["grocery"][index];
+                                Get.to(DetailsView(product: product));
                               },
                               child: Column(
                                 spacing: 3,
@@ -85,7 +85,7 @@ class ExploreViewPage extends StatelessWidget {
                                   Center(child: Image.network("${controller.categoryProduct["grocery"][index]["img"].toString()}", height: 69, width: 69,)),
                                   Text("${controller.categoryProduct["grocery"][index]["title"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),overflow: TextOverflow.ellipsis, maxLines: 1,),
                                   Text("${controller.categoryProduct["grocery"][index]["net_weight"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
-                                  Text("${controller.categoryProduct["grocery"][index]["price"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
+                                  Text("৳ ${controller.categoryProduct["grocery"][index]["price"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
                                 ],
                               ),
                             ),
@@ -161,7 +161,7 @@ class ExploreViewPage extends StatelessWidget {
                                 Center(child: Image.network("${controller.categoryProduct["vegetable"][index]["img"].toString()}", height: 69, width: 69,)),
                                 Text("${controller.categoryProduct["vegetable"][index]["title"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),overflow: TextOverflow.ellipsis, maxLines: 1,),
                                 Text("${controller.categoryProduct["vegetable"][index]["net_weight"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
-                                Text("${controller.categoryProduct["vegetable"][index]["price"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
+                                Text("৳ ${controller.categoryProduct["vegetable"][index]["price"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
                               ],
                             ),
                             Positioned(
@@ -236,7 +236,7 @@ class ExploreViewPage extends StatelessWidget {
                                 Center(child: Image.network("${controller.categoryProduct["fruit"][index]["img"].toString()}", height: 69, width: 69,)),
                                 Text("${controller.categoryProduct["fruit"][index]["title"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),overflow: TextOverflow.ellipsis, maxLines: 1,),
                                 Text("${controller.categoryProduct["fruit"][index]["net_weight"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
-                                Text("${controller.categoryProduct["fruit"][index]["price"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
+                                Text("৳ ${controller.categoryProduct["fruit"][index]["price"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
                               ],
                             ),
                             Positioned(
@@ -311,7 +311,7 @@ class ExploreViewPage extends StatelessWidget {
                                 Center(child: Image.network("${controller.categoryProduct["dairy"][index]["img"].toString()}", height: 69, width: 69,)),
                                 Text("${controller.categoryProduct["dairy"][index]["title"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),overflow: TextOverflow.ellipsis, maxLines: 1,),
                                 Text("${controller.categoryProduct["dairy"][index]["net_weight"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
-                                Text("${controller.categoryProduct["dairy"][index]["price"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
+                                Text("৳ ${controller.categoryProduct["dairy"][index]["price"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
                               ],
                             ),
                             Positioned(
@@ -386,7 +386,7 @@ class ExploreViewPage extends StatelessWidget {
                                 Center(child: Image.network("${controller.categoryProduct["bakery"][index]["img"].toString()}", height: 69, width: 69,)),
                                 Text("${controller.categoryProduct["bakery"][index]["title"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Color(0xff656565)),overflow: TextOverflow.ellipsis, maxLines: 1,),
                                 Text("${controller.categoryProduct["bakery"][index]["net_weight"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500,color: Color(0xff656565)),),
-                                Text("${controller.categoryProduct["bakery"][index]["price"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
+                                Text("৳ ${controller.categoryProduct["bakery"][index]["price"]}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),)
                               ],
                             ),
                             Positioned(

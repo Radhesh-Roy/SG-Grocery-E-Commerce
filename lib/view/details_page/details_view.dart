@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sggrocery/view/widget/custom_back_button.dart';
 
 class DetailsView extends StatelessWidget {
-  const DetailsView({super.key});
+  final Map<String, dynamic>product;
+  const DetailsView({super.key, required this.product});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +45,7 @@ class DetailsView extends StatelessWidget {
                     width: 195,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage("assets/details.png"),
+                        image: NetworkImage("${product["img"]}"),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -62,7 +63,7 @@ class DetailsView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Green Apple",
+                        "${product["title"]}",
                         style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.w700,
@@ -147,14 +148,14 @@ class DetailsView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "\$3",
+                        "৳ ${product["price"]}",
                         style: TextStyle(
                           fontSize: 34,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       Text(
-                        "(42% off)",
+                        "(${product["discount_parcent"]}% off)",
                         style: TextStyle(
                           color: Color(0xff55AB60),
                           fontSize: 22,
@@ -169,7 +170,7 @@ class DetailsView extends StatelessWidget {
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
                   ),
                   Text(
-                    "Green apples have less sugar and carbs, and more fiber, protein, potassium, iron, and vitamin K, taking the lead as a healthier variety, although the differences are ever so slight.",
+                    "${product['description']}",
                     style: TextStyle(
                       color: Color(0xff9B9B9B),
                       fontSize: 16,
