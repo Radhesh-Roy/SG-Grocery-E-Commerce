@@ -222,7 +222,7 @@ class HomeController extends GetxController{
       {
         "id": 3,
         "title": "Red Lentils",
-        "img": "https://images.unsplash.com/photo-1515543904379-3d757afe72e3?w=600",
+        "img": "https://www.keepingthepeas.com/wp-content/uploads/2022/11/red-lentils-in-wood-bowl-500x375.jpg",
         "net_weight": "1 Kg",
         "price": 165,
         "discount_price": 150,

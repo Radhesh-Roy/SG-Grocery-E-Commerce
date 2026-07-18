@@ -45,8 +45,12 @@ class DetailsView extends StatelessWidget {
                     width: 195,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: NetworkImage("${product["img"]}"),
-                        fit: BoxFit.fill,
+                        image: (product["img"] != null &&
+                            product["img"].toString().isNotEmpty)
+                            ? NetworkImage(product["img"])
+                            : const AssetImage("assets/no_image/no_image.png")
+                        as ImageProvider,
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
@@ -72,7 +76,6 @@ class DetailsView extends StatelessWidget {
                       Row(
                         spacing: 6,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
                         children: [
                           InkWell(
                             onTap: () {},

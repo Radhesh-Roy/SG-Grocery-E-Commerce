@@ -141,7 +141,11 @@ class ExploreViewPage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return InkWell(
                       hoverColor: Colors.transparent,
-                      onTap: (){},
+                      onTap: (){
+                          var product=controller.categoryProduct["vegetable"][index];
+                          Get.to(DetailsView(product: product));
+
+                      },
                       child: Container(
                         margin: EdgeInsets.all(5),
                         padding: EdgeInsets.all(4),
@@ -216,7 +220,10 @@ class ExploreViewPage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return InkWell(
                       hoverColor: Colors.transparent,
-                      onTap: (){},
+                      onTap: (){
+                        var product=controller.categoryProduct["fruit"][index];
+                        Get.to(DetailsView(product: product));
+                      },
                       child: Container(
                         margin: EdgeInsets.all(5),
                         padding: EdgeInsets.all(4),
@@ -291,7 +298,10 @@ class ExploreViewPage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return InkWell(
                       hoverColor: Colors.transparent,
-                      onTap: (){},
+                      onTap: (){
+                        var product=controller.categoryProduct["dairy"][index];
+                        Get.to(DetailsView(product: product));
+                      },
                       child: Container(
                         margin: EdgeInsets.all(5),
                         padding: EdgeInsets.all(4),
@@ -366,7 +376,10 @@ class ExploreViewPage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return InkWell(
                       hoverColor: Colors.transparent,
-                      onTap: (){},
+                      onTap: (){
+                        var product=controller.categoryProduct["bakery"][index];
+                        Get.to(DetailsView(product: product));
+                      },
                       child: Container(
                         margin: EdgeInsets.all(5),
                         padding: EdgeInsets.all(4),
