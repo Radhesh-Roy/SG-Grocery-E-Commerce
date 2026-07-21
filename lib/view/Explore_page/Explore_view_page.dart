@@ -44,8 +44,7 @@ class ExploreViewPage extends StatelessWidget {
                 InkWell(
                     hoverColor: Colors.transparent,
                     onTap: (){
-                      Get.to(ExploreItemViewPage(category: 'Gloceries',));
-
+                      Get.to(ExploreItemViewPage(categories: 'Groceries',), arguments: "grocery");
                     },
                     child: Text("See All", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
               ],
@@ -125,7 +124,7 @@ class ExploreViewPage extends StatelessWidget {
                 InkWell(
                     hoverColor: Colors.transparent,
                     onTap: (){
-                      Get.to(ExploreItemViewPage(category: 'Vegetables',));
+                      Get.to(ExploreItemViewPage(categories: 'Vegetables',),arguments: "vegetable");
 
                     },
                     child: Text("See All", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
@@ -205,7 +204,7 @@ class ExploreViewPage extends StatelessWidget {
                 InkWell(
                     hoverColor: Colors.transparent,
                     onTap: (){
-                      Get.to(ExploreItemViewPage(category: 'Fruits',));
+                      Get.to(ExploreItemViewPage(categories: 'Fruits',),arguments: "fruit");
                     },
                     child: Text("See All", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
               ],
@@ -283,7 +282,7 @@ class ExploreViewPage extends StatelessWidget {
                 InkWell(
                     hoverColor: Colors.transparent,
                     onTap: (){
-                      Get.to(ExploreItemViewPage(category: 'Dairy Products',));
+                      Get.to(ExploreItemViewPage(categories: 'Dairy Products',),arguments: "dairy");
                     },
                     child: Text("See All", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
               ],
@@ -361,7 +360,7 @@ class ExploreViewPage extends StatelessWidget {
                 InkWell(
                     hoverColor: Colors.transparent,
                     onTap: (){
-                      Get.to(ExploreItemViewPage(category: 'Bakery Items',));
+                      Get.to(ExploreItemViewPage(categories: 'Bakery Items',), arguments: "bakery");
                     },
                     child: Text("See All", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xff55AB60)),))
               ],
@@ -429,7 +428,6 @@ class ExploreViewPage extends StatelessWidget {
                       ),
                     );},)),// Bekary items Product
             SizedBox(height: 10,),
-
           ],
         ),),
       ),

@@ -1,21 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:sggrocery/controller/home_controller/home_controller.dart';
 
 import '../widget/custom_back_button.dart';
 
 class ExploreItemViewPage extends StatelessWidget {
 
-  final String category;
-  const ExploreItemViewPage({super.key, required this.category});
+  final String categories;
+  const ExploreItemViewPage({super.key, required this.categories});
 
   @override
   Widget build(BuildContext context) {
+    final String category= Get.arguments;
+    final HomeController controller=Get.find();
+    List Products=controller.categoryProduct[category];
     return Scaffold(
       backgroundColor: Color(0xff55AB60),
       appBar: AppBar(
         backgroundColor: Color(0xff55AB60),
+
         scrolledUnderElevation: 0,
         leading: CustomBackButton(color: Colors.white,),
-        title: Text("$category", style: TextStyle( fontWeight: FontWeight.w700, fontSize: 22, color: Colors.white
+        title: Text("$categories", style: TextStyle( fontWeight: FontWeight.w700, fontSize: 22, color: Colors.white
         ),),
       ),
       body: Container(
@@ -26,7 +34,7 @@ class ExploreItemViewPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(12),
           child: GridView.builder(
-            itemCount: 10,
+            itemCount: Products.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), itemBuilder: (context, index) {
             return Container(
               margin: EdgeInsets.all(5),
@@ -43,12 +51,12 @@ class ExploreItemViewPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Center(child: Image.asset("assets/strawberry.png", height: 60, width: 107,)),
-                      Text("Strawberry (1 kg)", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Color(0xff656565)),),
+                      Center(child: Image.network("${Products[index]["img"]}", height: 60, width: 107,)),
+                      Text("${Products[index]["title"]} (${Products[index]["net_weight"]})", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Color(0xff656565)),),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("\$3", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600,color: Color(0xff55AB60)),),
+                          Text("${Products[index]["price"]}", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600,color: Color(0xff55AB60)),),
                           Row(
                             children: [
                               InkWell(
