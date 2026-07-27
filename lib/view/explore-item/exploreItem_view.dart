@@ -18,6 +18,7 @@ class ExploreItemViewPage extends StatelessWidget {
     List Products=controller.categoryProduct[category];
     return Scaffold(
       backgroundColor: Color(0xff55AB60),
+
       appBar: AppBar(
         backgroundColor: Color(0xff55AB60),
 
