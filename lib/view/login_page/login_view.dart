@@ -1,97 +1,93 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:sggrocery/controller/auth_controller/login/login_controller.dart';
-import 'package:sggrocery/view/home/home_page.dart';
-import 'package:sggrocery/view/registration_page/reg_page.dart';
 
 class LogInViewPage extends StatelessWidget {
-  LogInViewPage({super.key});
-  LoginController controller=Get.put(LoginController());
-
-  final _formkey=GlobalKey<FormState>();
+  const LogInViewPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final LoginController controller = Get.put(LoginController());
+    final formKey = GlobalKey<FormState>();
+
     return Scaffold(
       backgroundColor: Colors.white,
-        appBar: AppBar(
-          scrolledUnderElevation: 0,
-          backgroundColor: Colors.white,
-          title: Image.asset("assets/appbar-image.png", height: 53,),
-          centerTitle: true,
-        ),
+      appBar: AppBar(
+        scrolledUnderElevation: 0,
+        backgroundColor: Colors.white,
+        title: Image.asset("assets/appbar-image.png", height: 53,),
+        centerTitle: true,
+      ),
       body: Form(
-        key: _formkey,
+        key: formKey,
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: Padding(padding: EdgeInsets.all(10),
+          child: Padding(
+            padding: const EdgeInsets.all(10),
             child: Column(
-             crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Center(child: Image.asset("assets/loginimage.png", height: 152,)),// image part
-                Text("Login", style: TextStyle(color: Color(0xff55AB60), fontSize: 24, fontWeight: FontWeight.w600),),
-                SizedBox(height: 20,),
-                Text("Email Id", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18,),),
-                SizedBox(height: 20,),
+                const Text("Login", style: TextStyle(color: Color(0xff55AB60), fontSize: 24, fontWeight: FontWeight.w600),),
+                const SizedBox(height: 20,),
+                const Text("Email Id", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18,),),
+                const SizedBox(height: 20,),
                 TextFormField(
-                  validator: (value){
-                    if(value==null|| value.isEmpty){
-                      return "Enter you Email";
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Enter your Email";
                     }
+                    return null;
                   },
                   controller: controller.logEmail,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10)
                     ),
-                    hintText: "Enter Your Email ID", hintStyle: TextStyle(color: Color(0xff858FAD))
+                    hintText: "Enter Your Email ID", hintStyle: const TextStyle(color: Color(0xff858FAD))
                   ),
                 ),
-                SizedBox(height: 20,),
-                Text("Password", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
+                const Text("Password", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
+                const SizedBox(height: 20,),
                 TextFormField(
-                  validator: (value){
-                    if(value==null|| value.isEmpty){
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
                       return "Enter Correct Password";
                     }
+                    return null;
                   },
                   controller: controller.logPass,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)
                       ),
-                      hintText: "Enter Your Password", hintStyle: TextStyle(color: Color(0xff858FAD))
+                      hintText: "Enter Your Password", hintStyle: const TextStyle(color: Color(0xff858FAD))
                   ),
-
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 InkWell(
-                  onTap: ()async{
-                    if(_formkey.currentState!.validate()){
-                      await controller.userData();
+                  onTap: () async {
+                    if (formKey.currentState!.validate()) {
+                      await controller.getData();
                     }
                   },
                   child: Container(
                     height: 50,
                     decoration: BoxDecoration(
-                      color: Color(0xff55AB60),
+                      color: const Color(0xff55AB60),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text("Login", style: TextStyle(color: Colors.white, ),)
                     ),
                   ),
                 ),// login Button
-                Row(
+                const Row(
                   children: [
                     Expanded(child: Divider()),
                     Padding(
-                      padding: const EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10),
                       child: Text("Or Continue With", style: TextStyle(color: Colors.grey),),
                     ),
                     Expanded(child: Divider()),
@@ -104,62 +100,65 @@ class LogInViewPage extends StatelessWidget {
                         height: 50,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          border: Border.all(color: Color(0xff55AB60)),
+                          border: Border.all(color: const Color(0xff55AB60)),
                           borderRadius: BorderRadius.circular(10)
                         ),
-                        child: Padding(padding: EdgeInsets.all(10),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Image.asset("assets/google.png", height: 32, width: 32,),
-                              SizedBox(width: 6,),
-                              Text("Google", style: TextStyle(fontSize: 18, color: Color(0xff626262)),)
+                              const SizedBox(width: 6,),
+                              const Text("Google", style: TextStyle(fontSize: 18, color: Color(0xff626262)),)
                             ],
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(width: 20,),
+                    const SizedBox(width: 20,),
                     Expanded(
                       child: Container(
                         height: 50,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                            border: Border.all(color: Color(0xff55AB60)),
+                            border: Border.all(color: const Color(0xff55AB60)),
                             borderRadius: BorderRadius.circular(10)
                         ),
-                        child: Padding(padding: EdgeInsets.all(10),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Image.asset("assets/facebook.png", height: 32, width: 32,),
-                              SizedBox(width: 6,),
-                              Text("Google", style: TextStyle(fontSize: 18, color: Color(0xff626262)),)
+                              const SizedBox(width: 6,),
+                              const Text("Facebook", style: TextStyle(fontSize: 18, color: Color(0xff626262)),)
                             ],
                           ),
                         ),
                       ),
                     ),
                   ],
-                ),// google facebok
-                SizedBox(height: 20,),
+                ),// google facebook
+                const SizedBox(height: 20,),
                 Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Don’t You Have an Account? ", style: TextStyle(color: Colors.grey, fontSize: 16, fontWeight: FontWeight.w400),),
-                      InkWell(
-                        hoverColor: Colors.transparent,
-                          onTap: (){
-                          Get.to(RegViewPage());
-                          },
-                          child: Text("Register",style: TextStyle(  fontSize: 16, fontWeight: FontWeight.w700),))
-                    ],
-                  )
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text("Don’t You Have an Account? ", style: TextStyle(color: Colors.grey, fontSize: 16, fontWeight: FontWeight.w400),),
+                    InkWell(
+                      hoverColor: Colors.transparent,
+                      onTap: () {
+                        Get.toNamed("/register");
+                      },
+                      child: const Text("Register", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),),
+                    )
+                  ],
+                )
               ],
             ),
           ),
         ),
-      )
+      ),
     );
   }
 }
