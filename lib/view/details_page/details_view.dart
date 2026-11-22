@@ -1,18 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sggrocery/controller/cart_controller/cart_controller.dart';
 import 'package:sggrocery/view/widget/custom_back_button.dart';
 
 class DetailsView extends StatelessWidget {
-  final Map<String, dynamic>product;
-  const DetailsView({super.key, required this.product});
+  final Map<String, dynamic>? product;
+  const DetailsView({super.key, this.product});
+
   @override
   Widget build(BuildContext context) {
+    final CartController cartController = Get.put(CartController());
+    final Map<String, dynamic> item = product ?? (Get.arguments as Map<String, dynamic>?) ?? {
+      "title": "Green Apple",
+      "price": "3",
+      "discount_parcent": "42",
+      "description": "Green apples have less sugar and carbs, and more fiber, protein, potassium, iron, and vitamin K, taking the lead as a healthier variety, although the differences are ever so slight.",
+      "img": ""
+    };
+
+    final RxInt quantity = 1.obs;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Color(0xff55AB60),
+        backgroundColor: const Color(0xff55AB60),
         scrolledUnderElevation: 0,
-        leading: CustomBackButton(color: Colors.white),
-        title: Text(
+        leading: const CustomBackButton(color: Colors.white),
+        title: const Text(
           "Details",
           style: TextStyle(
             fontWeight: FontWeight.w700,
@@ -30,7 +44,7 @@ class DetailsView extends StatelessWidget {
               children: [
                 Container(
                   height: 120,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xff55AB60),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(30),
@@ -45,11 +59,15 @@ class DetailsView extends StatelessWidget {
                     width: 195,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: (product["img"] != null &&
-                            product["img"].toString().isNotEmpty)
-                            ? NetworkImage(product["img"])
-                            : const AssetImage("assets/no_image/no_image.png")
-                        as ImageProvider,
+                        image: (item["img"] != null &&
+                                item["img"].toString().isNotEmpty &&
+                                item["img"].toString().startsWith("http"))
+                            ? NetworkImage(item["img"])
+                            : AssetImage(
+                                (item["img"] != null && item["img"].toString().isNotEmpty)
+                                    ? item["img"].toString()
+                                    : "assets/details.png",
+                              ) as ImageProvider,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -57,40 +75,46 @@ class DetailsView extends StatelessWidget {
                 ),
               ],
             ), // image stack
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Container(
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "${product["title"]}",
-                        style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.w700,
+                      Expanded(
+                        child: Text(
+                          "${item["title"] ?? "Product"}",
+                          style: const TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w700,
+                          ),
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                       Row(
-                        spacing: 6,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              if (quantity.value > 1) {
+                                quantity.value--;
+                              }
+                            },
                             hoverColor: Colors.transparent,
                             child: Container(
                               height: 30,
                               width: 30,
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                  color: Color(0xff55AB60),
+                                  color: const Color(0xff55AB60),
                                   width: 1,
                                 ),
                                 borderRadius: BorderRadius.circular(100),
                               ),
-                              child: Center(
+                              child: const Center(
                                 child: Text(
                                   "-",
                                   style: TextStyle(
@@ -102,26 +126,33 @@ class DetailsView extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Text(
-                            "1",
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.w600,
-                              color: Color(0xff55AB60),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Obx(
+                              () => Text(
+                                "${quantity.value}",
+                                style: const TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xff55AB60),
+                                ),
+                              ),
                             ),
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              quantity.value++;
+                            },
                             hoverColor: Colors.transparent,
                             child: Container(
-                              padding: EdgeInsets.all(1),
+                              padding: const EdgeInsets.all(1),
                               height: 30,
                               width: 30,
                               decoration: BoxDecoration(
-                                color: Color(0xff55AB60),
+                                color: const Color(0xff55AB60),
                                 borderRadius: BorderRadius.circular(100),
                               ),
-                              child: Center(
+                              child: const Center(
                                 child: Text(
                                   "+",
                                   style: TextStyle(
@@ -137,8 +168,8 @@ class DetailsView extends StatelessWidget {
                       ),
                     ],
                   ), // name
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     "Special Price",
                     style: TextStyle(
                       color: Color(0xff55AB60),
@@ -146,20 +177,20 @@ class DetailsView extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "৳ ${product["price"]}",
-                        style: TextStyle(
+                        "৳ ${item["price"] ?? "0"}",
+                        style: const TextStyle(
                           fontSize: 34,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       Text(
-                        "(${product["discount_parcent"]}% off)",
-                        style: TextStyle(
+                        "(${item["discount_parcent"] ?? item["discount-offer"] ?? "10"}% off)",
+                        style: const TextStyle(
                           color: Color(0xff55AB60),
                           fontSize: 22,
                           fontWeight: FontWeight.w400,
@@ -167,36 +198,37 @@ class DetailsView extends StatelessWidget {
                       ),
                     ],
                   ), // Price
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     "Description",
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
                   ),
                   Text(
-                    "${product['description']}",
-                    style: TextStyle(
+                    "${item['description'] ?? "No description available for this product."}",
+                    style: const TextStyle(
                       color: Color(0xff9B9B9B),
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    spacing: 7,
                     children: [
                       InkWell(
-                        onTap: (){},
+                        onTap: () {
+                          Get.toNamed("/subscription");
+                        },
                         hoverColor: Colors.transparent,
                         child: Container(
-                          padding: EdgeInsets.all(5),
+                          padding: const EdgeInsets.all(5),
                           height: 36,
                           width: 106,
                           decoration: BoxDecoration(
-                            color: Color(0xff55AB60),
+                            color: const Color(0xff55AB60),
                             borderRadius: BorderRadius.circular(5),
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "Subscribe",
                               style: TextStyle(
@@ -208,21 +240,31 @@ class DetailsView extends StatelessWidget {
                           ),
                         ),
                       ),
+                      const SizedBox(width: 10),
                       InkWell(
                         hoverColor: Colors.transparent,
-                        onTap: (){},
+                        onTap: () {
+                          cartController.addToCart({
+                            "title": item["title"] ?? "Product",
+                            "price": item["price"] ?? "0",
+                            "img": item["img"] ?? item["image"] ?? "assets/details.png",
+                            "quantity": quantity.value,
+                            "unit": "1 Pack"
+                          });
+                          Get.toNamed("/cart");
+                        },
                         child: Container(
-                          padding: EdgeInsets.all(5),
+                          padding: const EdgeInsets.all(5),
                           height: 36,
                           width: 106,
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: Color(0xff55AB60),
+                              color: const Color(0xff55AB60),
                               width: 1,
                             ),
                             borderRadius: BorderRadius.circular(5),
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "Buy Once",
                               style: TextStyle(
@@ -236,12 +278,12 @@ class DetailsView extends StatelessWidget {
                       ),
                     ],
                   ), // Button
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     "Related items",
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
                   ), // Related Items
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   SizedBox(
                     height: 150,
                     child: ListView.builder(
@@ -250,12 +292,20 @@ class DetailsView extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return InkWell(
                           hoverColor: Colors.transparent,
-                          onTap: () {},
+                          onTap: () {
+                            Get.toNamed("/details", arguments: {
+                              "title": "Strawberry",
+                              "price": "4",
+                              "discount_parcent": "15",
+                              "description": "Fresh strawberries rich in Vitamin C.",
+                              "img": "assets/strawberry.png"
+                            });
+                          },
                           child: Container(
-                            margin: EdgeInsets.all(5),
+                            margin: const EdgeInsets.all(5),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(7),
-                              color: Color(0xffF2FCF4),
+                              color: const Color(0xffF2FCF4),
                             ),
                             child: Column(
                               children: [
@@ -266,7 +316,7 @@ class DetailsView extends StatelessWidget {
                                       child: Container(
                                         height: 87,
                                         width: 87,
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           image: DecorationImage(
                                             image: AssetImage(
                                               "assets/strawberry.png",
@@ -281,17 +331,25 @@ class DetailsView extends StatelessWidget {
                                       bottom: 1,
                                       child: InkWell(
                                         hoverColor: Colors.transparent,
-                                        onTap: () {},
+                                        onTap: () {
+                                          cartController.addToCart({
+                                            "title": "Strawberry",
+                                            "price": "4",
+                                            "img": "assets/strawberry.png",
+                                            "quantity": 1,
+                                            "unit": "1kg"
+                                          });
+                                        },
                                         child: Container(
                                           height: 20,
                                           width: 20,
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                             color: Color(0xffB0B0B0),
                                             borderRadius: BorderRadius.only(
                                               topLeft: Radius.circular(12),
                                             ),
                                           ),
-                                          child: Center(
+                                          child: const Center(
                                             child: Text(
                                               "+",
                                               style: TextStyle(
@@ -308,14 +366,14 @@ class DetailsView extends StatelessWidget {
                                 Container(
                                   height: 38,
                                   width: 100,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(5),
                                       bottomRight: Radius.circular(5),
                                     ),
                                     color: Color(0xff55AB60),
                                   ),
-                                  child: Center(
+                                  child: const Center(
                                     child: Text(
                                       "Strawberry",
                                       style: TextStyle(

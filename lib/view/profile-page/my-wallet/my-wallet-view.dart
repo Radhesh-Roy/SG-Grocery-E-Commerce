@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sggrocery/view/widget/custom_back_button.dart';
 
 class MyWalletView extends StatelessWidget {
   const MyWalletView({super.key});
@@ -6,18 +7,11 @@ class MyWalletView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff55AB60),
+      backgroundColor: const Color(0xff55AB60),
       appBar: AppBar(
-        backgroundColor: Color(0xff55AB60),
+        backgroundColor: const Color(0xff55AB60),
         scrolledUnderElevation: 0,
-        leading: InkWell(
-          hoverColor: Colors.transparent,
-          onTap: () {},
-          child: Image(
-            image: AssetImage("assets/back.png"),
-            color: Colors.white,
-          ),
-        ),
+        leading: const CustomBackButton(color: Colors.white),
         title: Text(
           "My Wallet",
           style: TextStyle(

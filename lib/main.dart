@@ -18,13 +18,13 @@ import 'package:sggrocery/view/subscription_page/subscriptiopn_view.dart';
 
 import 'firebase_options.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -34,11 +34,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "SG Glocery",
+      title: "SG Grocery",
       initialRoute: "/bottomBar",
       routes: {
-        "/splash": (context)=>SplashScreen(),
-        "/bottomBar": (context)=>BottomBarView()
+        "/splash": (context) => SplashScreen(),
+        "/bottomBar": (context) => BottomBarView(),
+        "/login": (context) => LogInViewPage(),
+        "/register": (context) => RegViewPage(),
+        "/home": (context) => const HomeViewPage(),
+        "/explore": (context) => const ExploreViewPage(),
+        "/exploreItem": (context) => const ExploreItemViewPage(),
+        "/details": (context) => const DetailsView(),
+        "/cart": (context) => const CartViewPage(),
+        "/payment": (context) => PaymentViewpage(),
+        "/profile": (context) => const ProfileViewPage(),
+        "/myAddress": (context) => const MyAddressView(),
+        "/myWallet": (context) => const MyWalletView(),
+        "/subscription": (context) => const SubscriptionViewPage(),
       },
     );
   }
