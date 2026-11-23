@@ -30,6 +30,7 @@ class ExploreViewPage extends StatelessWidget {
                     arguments: categoryKey,
                   );
                 },
+
                 child: Text(
                   sectionTitle,
                   style: const TextStyle(
