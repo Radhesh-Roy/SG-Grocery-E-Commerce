@@ -18,11 +18,11 @@ class ExploreViewPage extends StatelessWidget {
       List products = controller.categoryProduct[categoryKey] ?? [];
 
       return Column(
+
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-
               InkWell(
                 hoverColor: Colors.transparent,
                 onTap: () {
