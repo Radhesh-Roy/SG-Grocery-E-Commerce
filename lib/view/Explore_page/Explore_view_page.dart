@@ -16,9 +16,7 @@ class ExploreViewPage extends StatelessWidget {
 
     Widget buildCategorySection(String sectionTitle, String categoryKey) {
       List products = controller.categoryProduct[categoryKey] ?? [];
-
       return Column(
-
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
